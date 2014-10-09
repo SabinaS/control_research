@@ -52,6 +52,7 @@ public class Environment implements FurnaceFanStates
 
     // If the furnace or fan have been running for a while the rate of
     // temp change should increase.
+    // This mirrors the proportional PID method
     public int outsideFactors(int newTemp)
     {
 
