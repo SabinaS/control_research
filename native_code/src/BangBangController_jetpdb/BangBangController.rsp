@@ -1,0 +1,40 @@
+-Image=MachO
+-DynamicLinker=/usr/lib/dyld
+
+
+-x64
+-PIC
+-jetcomponent=10.00
+-jetedition=Evaluation
+-vcode=5
+-sys=C
+-nosmart
+-zimer=0
+-stack=900000
+-config=StackLimit:900000
+-LargeAddressAware
+-config=VMProperty:-Djet.gc.heaplimit:0 -Djet.stack.trace
+-config=ClassPath:BangBangController.jar:.
+-config=JETProfile:5
+-config=JETProfileName:1.7.0_55
+-config=RuntimeKind:DESKTOP
+-EmbeddedFileSys=/Users/alangordon/Desktop/Sabina'sEclipse/bangcontroller/src/BangBangController_jetpdb/BangBangController.efs
+-config=MainClass:BangBangController
+-config=StandaloneResources:.
+-config=VersionInfo:jet-1000-mp1 (eval, en)
+-config=CompatibilityString:Java SE version: 1.7.0_55; JET update level: 0; CPU architecture: amd64
+-name=BangBangController
+
+-entry=_main
+
+-LinkFileAsRData=LINK_SplashPicture:/Users/alangordon/Desktop/Sabina'sStuff/jet10.0-eval-amd64/lib/x86/dummysplash.lib
+/Users/alangordon/Desktop/Sabina'sStuff/jet10.0-eval-amd64/lib/x86/startup-exe-normal.zip
+-config=PackagingOptions:component_microversions=BC-0
+/Users/alangordon/Desktop/Sabina'sStuff/jet10.0-eval-amd64/lib/x86/_CoreFoundation.dylib
+/Users/alangordon/Desktop/Sabina'sStuff/jet10.0-eval-amd64/lib/x86/_libSystem.B.dylib
+/Users/alangordon/Desktop/Sabina'sStuff/jet10.0-eval-amd64/lib/x86/_libiconv.dylib
+/Users/alangordon/Desktop/Sabina'sEclipse/bangcontroller/src/BangBangController_jetpdb/obj.zip
+-Config=RTComponent:libXKRN10005.dylib
+/Users/alangordon/Desktop/Sabina'sStuff/jet10.0-eval-amd64/lib/x86/startup-rtlink.zip
+-StrictLinkToDLL
+

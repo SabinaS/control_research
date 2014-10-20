@@ -1,0 +1,44 @@
+%%Excelsior JET v10.0 project file
+
+-compilewithfixedheap-
+-genstackalloc+
+-genstacktrace-
+-global-
+-gui-
+-ignoreclassduplication+
+-ignorememberabsence+
+-inline+
+-multiapp-
+-splashgetfrommanifest-
+-startonfirstthread-
+
+-apptype=Plain
+-classabsence=HANDLE
+-compilerheap=1744830464
+-inlinelimit=100
+-inlinetolimit=1000
+-javacommandline:=java -jar BangBangController.jar
+-jetcplastpage:=PageCompile
+-jetrt=Desktop
+-jetvmprop=-Djet.gc.heaplimit:0 -Djet.stack.trace
+-main=BangBangController
+-outputdir=.
+-outputname=BangBangController
+-saprofmode=NONE
+-stacklimit=900000
+
+
+
+
+!classpathentry ./BangBangController.jar
+  -pack=noncompiled
+  -protect=nomatter
+  -optimize=all
+!end
+!classpathentry .
+  -pack=none
+  -protect=all
+  -optimize=all
+!end
+
+

@@ -1,0 +1,56 @@
+Excelsior JET v10.0 Evaluation Version 64-bit (c) Excelsior 1997,2013
+Active Java SE Version 1.7.0_55 (profile 5)
+************************  JET v10.0 EVALUATION **************************
+*  This program cannot be used in a business, commercial, government,  *
+*  or  institutional  environment  except  for  evaluation  purposes.  *
+************************************************************************
+Make project "/Users/alangordon/Desktop/Sabina'sEclipse/bangcontroller/src/BangBangController.prj"
+64-bit Excelsior JET for Windows does not yet support Startup Accelerator
+Reading BangBangController.jar ...  5 classes
+Reading . ...  0 classes
+
+Total compilable classes within classpath entries: 5
+
+------------------------  Parsing Stage  ---------------------------------------
+
+   1/5: BangBangController.jar:/FurnaceFanStates.class
+   2/5: BangBangController.jar:/BangBangController.class
+   3/5: BangBangController.jar:/CurrentTempChanged.class
+   4/5: BangBangController.jar:/Thermostat.class
+   5/5: BangBangController.jar:/Environment.class
+-------------------------------------------------------------------
+files: 5  errors: 0  warnings: 0  notices: 0
+
+------------------------  Codegen Stage  ---------------------------------------
+
+  0% done, 5/5 to go: BangBangController.jar:/Environment.class
+errors(0), warnings(0), notes(0); bytes(7645), time  0.17
+ 20% done, 4/5 to go: BangBangController.jar:/Thermostat.class
+errors(0), warnings(0), notes(0); bytes(5632), time  0.04
+ 40% done, 3/5 to go: BangBangController.jar:/CurrentTempChanged.class
+errors(0), warnings(0), notes(0); bytes(1803), time  0.00
+ 60% done, 2/5 to go: BangBangController.jar:/BangBangController.class
+errors(0), warnings(0), notes(0); bytes(3336), time  0.02
+ 80% done, 1/5 to go: BangBangController.jar:/FurnaceFanStates.class
+errors(0), warnings(0), notes(0); bytes(1806), time  0.00
+
+Optimizing compiler statistics
+==============================
+Methods compilation stats:
+  All methods : 15 out of 15  (100%)
+
+
+New "/Users/alangordon/Desktop/Sabina'sEclipse/bangcontroller/src/BangBangController_jetpdb/nums.clnums" is generated
+Preparing resources for packing ...
+Processing BangBangController.jar ...
+Resources were successfully prepared for packing.
+-------------------------------------------------------------------
+files: 5  errors: 0  warnings: 0  notices: 0
+
+XDS Link Version 2.24.13 Copyright (c) Excelsior 1995-2014.
+No errors, no warnings
+
+Link time 0:00.37
+
+Total compilation time 0:03.69
+
