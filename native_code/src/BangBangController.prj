@@ -1,5 +1,7 @@
 %%Excelsior JET v10.0 project file
 
+-jpiiproject=/Users/alangordon/Desktop/Sabina'sEclipse/bangcontroller/src/BangBangController.jpn
+
 -compilewithfixedheap-
 -genstackalloc+
 -genstacktrace-
