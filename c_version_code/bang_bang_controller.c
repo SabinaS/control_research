@@ -111,10 +111,10 @@ void currentTempChanged(int newTemp){
 		furnace_state = 0;
 		setFurnaceFanStates(furnace_state, fan_state);
 		//sendNewTemp(); 
-	} else if (newTemp == 70)
+	} else if (newTemp == 70) {
 		printf("Runtime: %d, We've reached the perfect temp!\n", run_time);
 		sendNewTemp();
-	} else{
+	} else {
 		printf("Runtime: %d, Temp: %d\n", run_time, newTemp);
 		sendNewTemp(); 
 	}
