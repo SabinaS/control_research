@@ -116,6 +116,7 @@ void currentTempChanged(int newTemp){
 		sendNewTemp();
 	} else{
 		printf("Runtime: %d, Temp: %d\n", run_time, newTemp);
+		sendNewTemp(); 
 	}
 }
 
