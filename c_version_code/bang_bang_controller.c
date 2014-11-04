@@ -114,6 +114,9 @@ void currentTempChanged(int newTemp){
 	} else if (newTemp == 70)
 		printf("Runtime: %d, We've reached the perfect temp!\n", run_time);
 		sendNewTemp();
+	} else{
+		printf("Runtime: %d, Temp: %d\n", run_time, newTemp);
+	}
 }
 
 void main()
