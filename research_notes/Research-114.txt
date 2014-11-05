@@ -1,0 +1,15 @@
+Research- 11/4
+
+Rewrote Java files as C files
+- instead of classes, wrote program as a series of functions with global variables
+- since C doesn’t support boolean type, converted all boolean variables to int where a 0 is false and a 1 is true
+
+Updates: 
+- simulation stops after 5 trials and reaches perfect temp twice…
+- sim now runs 100 trials but always with same results and skips certain runtimes
+- simulation now runs fine
+- makefile compiles fine but to run with debug option, compiled instead using:
+   gcc –g –o bang_bang_controller bang_bang_controller.c
+
+Now will make a simple hello world program to test the gdb macros
+- 

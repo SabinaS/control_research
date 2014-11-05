@@ -1,0 +1,53 @@
+Research 10/27
+
+Previous Week Summary
+
+To compile my Java files to native machine code, I tried a few things:
+1) Mono Framework + IKVM: this method was mentioned as an alternative to GCJ and GCC because GCJ is not really supported anymore. However, I was not able to get Mono to install correctly on Mac OSX
+2) Next, I tried installing GCC directly, which worked, but I was not able to find any way to add GCJ on Mac. 
+3) I also tried installing GCC and GCJ on ArchLinux, but the GCJ installation failed. 
+4) Next, I read about another alternative to GCJ: Excelsior JET, which is meant to allow you to easily compile Java to native binaries. I was able to download a 60-day trial from http://www.excelsior-usa.com/jet.html
+a) http://www.excelsiorjet.com/evaluate --> quick guide
+
+JET
+* Was able to get it to run locally
+o Able to successfully test run BangBangController in Jet 
+o Able to successfully run BangBangController executable compiled by JET
+* To run outside original build directory:
+o On JET Evaluation, had to run JetPackII which created a package so that you can run your executable anywhere else
+
+To run BangBangController in Linux
+* Was able to run BangBangController.jar (non-native version)
+* Had trouble running the natively compiled version 
+o having trouble running the BangBangController on Clic machines
+o both the exe file and the linux system are 64bit but Clic still won’t run the executable BangBangController  
+* Tried automatically compiling the native package using ‘xpack “BangBangController.jpn” but that created the exact same files as JetPackII did so that didn’t fix the problem 
+
+Since I couldn’t figure out how to get the native code to compile on the Linux machines, I decided to just download and use GDB on my local OSX machine. 
+
+To download GDB on OSX, I used the following tutorial (after installing Homebrew for OSX)
+* http://ntraft.com/installing-gdb-on-os-x-mavericks/ 
+
+This installed GDB on my local laptop and allowed me to run the binary executable BangBangController using gdb. 
+
+In order to use gdb macros, had to first experiment with gdb and learn about breakpoints and debugging techniques. Used these gdb tutorials
+* http://www.cs.umd.edu/~srhuang/teaching/cmsc212/gdb-tutorial-handout.pdf 
+* http://faculty.kutztown.edu/spiegel/Debugging/DebugPrimer.htm 
+
+Created simple gdb script files using some of the below examples
+* http://stackoverflow.com/questions/10748501/automating-gdb-sessions 
+* http://blog.flip-edesign.com/?p=60 
+
+However, when I try to run gdb on BangBangController, it cannot find a few OSO archive files. After doing some research on this, the most likely reason is because Jet doesn’t provide debugging arguments when the Java files are compiled. 
+
+After many unsuccessful trials of trying to get the Java code to work with gdb, I realized that it was time to just rewrite the program as C++. This is what I am doing now. 
+
+
+Goals for Next Week
+- Finish rewriting Java files as C++ files
+- Make sure gdb works with them
+- Run the gdb macros and evaluate results
+
+
+10/27 Agenda
+- Review gdb macros
