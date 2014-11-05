@@ -34,7 +34,7 @@ void sendNewTemp()
 	currentTempChanged(newTemp); 
 }
 
-// We generate a new temp based on the furnace/fan and outside factors
+// We generate a new temp based on the furnace/fan and outside_factors
 int generateTemp()
 {
 	int newTemp = old_temp;
@@ -100,19 +100,20 @@ void setFurnaceFanStates(int furnaceState, int fanState)
 void currentTempChanged(int newTemp){
 	// We want a range where nothing is on
 	if (newTemp < 68) {
-		printf("Runtime: %d, Temp < 68: %d\n", run_time, newTemp);
+		printf("Runtime: %d, Temp: %d\n", run_time, newTemp);
 		furnace_state = 1;
 		fan_state = 0;
 		setFurnaceFanStates(furnace_state, fan_state);
 		//sendNewTemp(); 
 	} else if (newTemp > 72) {
-		printf("Runtime: %d, Temp > 72: %d\n", run_time, newTemp);
+		printf("Runtime: %d, Temp: %d\n", run_time, newTemp);
 		fan_state = 1;
 		furnace_state = 0;
 		setFurnaceFanStates(furnace_state, fan_state);
 		//sendNewTemp(); 
 	} else if (newTemp == 70) {
-		printf("Runtime: %d, We've reached the perfect temp!\n", run_time);
+		printf("Runtime: %d, Temp: %d\n", run_time, newTemp);
+		printf("We've reached the perfect temp!\n");
 		sendNewTemp();
 	} else {
 		printf("Runtime: %d, Temp: %d\n", run_time, newTemp);
