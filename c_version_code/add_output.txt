@@ -1,0 +1,53 @@
+The program is not being run.
+Starting program: /home/ss3912/control_research/c_version_code/add 
+
+Breakpoint 1, main () at add.c:7
+7		a = rand() %100;
+Already logging to add_output.txt.
+8		printf("Rand a: %d\n", a);
+9		int b = rand() %100; 
+10		printf("Rand b: %d\n", b);
+12		int sum = foo(a,b);
+13		printf("Sum from main: %d\n", sum);
+Breakpoint 2 at 0x4005fa: file add.c, line 13.
+eax            0xa9	169
+[Inferior 1 (process 22431) exited normally]
+The program is not being run.
+Starting program: /home/ss3912/control_research/c_version_code/add 
+
+Breakpoint 1, main () at add.c:7
+7		a = rand() %100;
+Already logging to add_output.txt.
+8		printf("Rand a: %d\n", a);
+9		int b = rand() %100; 
+10		printf("Rand b: %d\n", b);
+12		int sum = foo(a,b);
+13		printf("Sum from main: %d\n", sum);
+15		return 0;
+16	}
+__libc_start_main (main=0x400544 <main>, argc=1, ubp_av=0x7fffffffe708, init=<optimized out>, fini=<optimized out>, 
+    rtld_fini=<optimized out>, stack_end=0x7fffffffe6f8) at libc-start.c:258
+258	libc-start.c: No such file or directory.
+Breakpoint 2 at 0x7ffff7a3c76d: file libc-start.c, line 258.
+$1 = 83
+[Inferior 1 (process 22549) exited normally]
+8		printf("Rand a: %d\n", a);
+9		int b = rand() %100; 
+10		printf("Rand b: %d\n", b);
+12		int sum = foo(a,b);
+13		printf("Sum from main: %d\n", sum);
+Breakpoint 2 at 0x4005fa: file add.c, line 13.
+$1 = 83
+Left operand of assignment is not a modifiable lvalue.
+A debugging session is active.
+
+	Inferior 1 [process 22582] will be killed.
+
+Quit anyway? (y or n) 8		printf("Rand a: %d\n", a);
+9		int b = rand() %100; 
+10		printf("Rand b: %d\n", b);
+12		int sum = foo(a,b);
+13		printf("Sum from main: %d\n", sum);
+Breakpoint 2 at 0x4005fa: file add.c, line 13.
+$1 = 83
+[Inferior 1 (process 22603) exited normally]
