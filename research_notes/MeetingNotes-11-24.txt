@@ -1,30 +1,30 @@
 run objdump
-extract the code and data section from the binary
+extract the code and data sections of addresses from the binary
 there are libraries to help you find where the code and data addresses begin
 
-want to automatically generate gdb macros
-write a python script that outputs a random gdb script to test the program
---> generating random fault that changes instruction, data item, then records
-what is the impact of that change in the program
---> python scripts should be configurable
+goal: using python scripts, want to automatically generate gdb macros
+todo: write a python script that outputs a random gdb script to test the program
+--> generating random faults that change instruction, data item, register --> then records
+what is the impact of that change on the program
+--> python scripts should be configurable (read in a config text file)
 
 genfault.py takes in config.txt
 - config.txt :
-	name of binary file
+	name of binary file to read in
 	probability of instru fault 0.2
 	probability ot data memory fault 0.5
 	probability ot data register fault 0.4
 	probability of branch instruction fault 0.3
 	probability of arithmetic fault 0.4
-	autofault 1 
+	autofault 1 --> this should randomize the above probabilities?
 
-genfault should open up binary, locate the code section addresses, heap addresses (application binary interface) --> find the segement addresses start flipping bits --> record the output of gdb execution and compare it with good execution so know what happened
+genfault should open up binary, locate the code section addresses, heap addresses (using maybe application binary interface?), stack addresses--> find the segement addresses and then you have a range of addreses for each different memory type --> start flipping bits --> record the output of gdb execution and compare it with good execution so know what happened (look for segfault keywords as well)
 
-addresses: heap | stack| bss | cs
-get the ranges for each
+binary address types: heap | stack| bss | cs
+--> get the ranges for each
 
 randomly pick a memory location in the heap or stack (differentiate bw the two so can tell which affects porogram more)
-stack data much more likely to affect the program
+--> stack data much more likely to affect the program
 
 this is standard fault injection and analysis
 
