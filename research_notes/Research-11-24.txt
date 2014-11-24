@@ -1,0 +1,26 @@
+Summary of Last Week
+
+I changed several registers and instructions in the bang bang program, and obtained the following results
+
+Register values
+change_values.gdb:
+change starting value → similar effect to last week
+change_random_values.gdb → values not associated with variables had no effect on the system
+change_reg_addr.gdb → no effect on the system
+stuck_at.gdb → no effect on the system
+
+Instructions
+change_branch.gdb → change bne to je → changes behavior for half of system
+change_jump.gdb → change jmp to je and jg → no effect
+change_sub.gdb → got SEGFAULTe
+change_sub_gen.gdb → got SEGFAULT
+change_jne.gdb → min goes down to 64 and max to 74
+
+From this, we can conclude that the most sensitive registers concern the variables that we set and the most sensitive instructions are ones where we change the subtract to add.
+
+Goals for Next Week
+
+Test added macros
+Run tests in large numbers
+
+

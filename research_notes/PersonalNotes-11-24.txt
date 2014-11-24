@@ -1,0 +1,48 @@
+ToDo
+ 
+Change register values
+change to 0 or 99
+small change that won’t affect behavior
+change that will affect behavior 
+
+Change an instruction
+
+Change one bit somewhere randomly in the file 
+
+Change the program counter
+set breakpoint to c = a + b
+p $pc b
+$pc = $pc & (mask)
+
+Change somehow so getting opposite values?
+what is frequency when this happens during transient shops?
+
+what inputs can attacker supply to cause program to run for a long time?
+Which variables are most sensitive?
+
+--------------------------------------------------------------------------------------------------------------
+1. Register values
+change_values: 
+change starting value → similar effect to last week
+change_random_values → values not associated with variables had no effect on the system
+change_reg_addr → no effect
+stuck_at_one → no effect 
+2. Instructions
+change_branch → change bne to je → changes behavior for half of system
+change_jump → change jmp to je and jg → no effect
+change_sub → got SEGFAULT
+change_sub_gen → got SEGFAULT
+change_jne → min goes down to 64 and max to 74
+
+--------------------------------------------------------------------------------------------------------------
+
+add.c
+→ break at main (5) or foo (12)
+
+hello_world.c
+→ break at main
+
+tutorial on changing instr- http://mohit.io/blog/debugging-modifying-code-at-runtime/
+
+ 
+
