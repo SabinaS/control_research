@@ -18,7 +18,10 @@ genfault.py takes in config.txt
 	probability of arithmetic fault 0.4
 	autofault 1 --> this should randomize the above probabilities?
 
-genfault should open up binary, locate the code section addresses, heap addresses (using maybe application binary interface?), stack addresses--> find the segement addresses and then you have a range of addreses for each different memory type --> start flipping bits --> record the output of gdb execution and compare it with good execution so know what happened (look for segfault keywords as well)
+genfault should open up binary, locate the code section addresses, heap addresses (using maybe 
+application binary interface?), stack addresses--> find the segement addresses and then you have 
+a range of addreses for each different memory type --> start flipping bits --> record the output 
+of gdb execution and compare it with good execution so know what happened (look for segfault keywords as well)
 
 binary address types: heap | stack| bss | cs
 --> get the ranges for each
