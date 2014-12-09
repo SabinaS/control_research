@@ -62,7 +62,7 @@ for item in objdump_lines:
 	if(function_states[7] == True):
 		list_main.append(item)
 
-
+objdump_file.close()
 	
 # Then open the config file
 try: 
@@ -108,7 +108,7 @@ for item in config_lines:
 
 	
 # Close the file
-file_object.close
+config_file.close()
 
 # Define the gdb macros
 macros_to_create = 10
