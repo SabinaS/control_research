@@ -23,43 +23,43 @@ list_setFurnaceFanStates = []
 list_currentTempChanged = []
 list_main = []
 
-function_states = [false, false, false, false, false, false, false, false]
+function_states = [False, False, False, False, False, False, False, False]
 
 for item in objdump_lines:
 	# for each function, set a var so we know once we've reached its addresses 
 	if("<sendNewTemp>" in item):
-		function_states = [true, false, false, false, false, false, false, false]
+		function_states = [True, False, False, False, False, False, False, False]
 	elif("<generateTemp>" in item):
-		function_states = [false, true, false, false, false, false, false, false]
+		function_states = [False, True, False, False, False, False, False, False]
 	elif("<outsideFactors>" in item):
-		function_states = [false, false, true, false, false, false, false, false]
+		function_states = [False, False, True, False, False, False, False, False]
 	elif("<updateFurnaceTime>" in item):
-		function_states = [false, false, false, true, false, false, false, false]
+		function_states = [False, False, False, True, False, False, False, False]
 	elif("<updateFanTime>" in item):
-		function_states = [false, false, false, false, true, false, false, false]
+		function_states = [False, False, False, False, True, False, False, False]
 	elif("<setFurnaceFanStates>" in item):
-		function_states = [false, false, false, false, false, true, false, false]
+		function_states = [False, False, False, False, False, True, False, False]
 	elif("<currentTempChanged>" in item):
-		function_states = [false, false, false, false, false, false, true, false]
+		function_states = [False, False, False, False, False, False, True, False]
 	elif("<main>" in item):
-		function_states = [false, false, false, false, false, false, false, true]
+		function_states = [False, False, False, False, False, False, False, True]
 	
 	# place the addresses of each function into that function's list
-	if(function_states[0] == true):
+	if(function_states[0] == True):
 		list_sendNewTemp.append(item)
-	if(function_states[1] == true):
+	if(function_states[1] == True):
 		list_generateTemp.append(item)
-	if(function_states[2] == true):
+	if(function_states[2] == True):
 		list_outsideFactors.append(item)
-	if(function_states[3] == true):
+	if(function_states[3] == True):
 		list_updateFuranceTime.append(item)
-	if(function_states[4] == true):
+	if(function_states[4] == True):
 		list_updateFanTime.append(item)
-	if(function_states[5] == true):
+	if(function_states[5] == True):
 		list_setFurnaceFanStates.append(item)
-	if(function_states[6] == true):
+	if(function_states[6] == True):
 		list_currentTempChanged.append(item)
-	if(function_states[7] == true):
+	if(function_states[7] == True):
 		list_main.append(item)
 
 
