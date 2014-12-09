@@ -2,6 +2,7 @@
 
 import sys
 import os
+import random
 
 # First open the objdump.txt file
 try:
