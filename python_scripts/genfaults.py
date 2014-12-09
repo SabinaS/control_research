@@ -16,6 +16,18 @@ lines = file_object.readlines()
 # sys.stdout.write(" ".join(str(x) for x in lines))
 x = len(lines)
 
+file_to_debug = lines[0]
+print "file to debug " + file_to_debug
+
+
+# config.txt contains the variables:
+# file_to_debug
+# isntr_prob
+# datamem_prob
+# datareg_prob
+# branch_prob
+# arith_prob
+
 for item in lines:
 	print item
 	if("instr" in item):
