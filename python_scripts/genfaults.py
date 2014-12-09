@@ -1,23 +1,31 @@
 #!/usr/bin/python
 
 import sys
+import os
+# first open the objdump.txt file
+try:
+	objdump_file = open('objdump.txt', "r")
+except IOError:
+	print "There was an error reading from objdump.txt"
+	system.exit();
 
-# Opening the file
+# Opening the config file
 try: 
-	file_object = open('config.txt', "r")
+	config_file = open('config.txt', "r")
 	print "Opened the file to be read"
 except IOError:
 	print "There was an error reading from config.txt"
 	system.exit();
 
 # Reading each line from the file
-lines = file_object.readlines()
+lines = config_file.readlines()
 # print "Lines of file" + str(lines).strip('\n')
 # sys.stdout.write(" ".join(str(x) for x in lines))
-x = len(lines)
+file_len = len(lines)
 
 file_to_debug = lines[0]
 print "file to debug " + file_to_debug
+
 
 
 # config.txt contains the variables:
@@ -55,3 +63,22 @@ for item in lines:
 	
 # Close the file
 file_object.close
+
+macros_to_create = 10
+for x in range (0, 10):
+	file_name = "macro" + str(x) + ".gdb"
+	# print "file_name" + file_name
+
+	file = open(file_name, 'w+')
+	file.write("define change_file\n")
+	# b at a random location (from function calls)
+	# walk a random number of steps
+	# read the memory location
+	# change something
+	file.write("b generateTemp\n")
+	file.write("end\n")
+
+
+
+
+
