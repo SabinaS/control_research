@@ -3,6 +3,7 @@
 import sys
 import os
 import random
+import binascii
 
 # First open the objdump.txt file
 try:
@@ -115,20 +116,38 @@ config_file.close()
 macros_to_create = 10
 for x in range (0, 10):
 	file_name = "macro" + str(x) + ".gdb"
-	# print "file_name" + file_name
-
 	file = open(file_name, 'w+')
+	
 	file.write("define change_file\n")
+	
 	# b at a random location (from function calls)
 	function = ['main', 'currentTempChanged', 'setFurnaceFanStates', 'updateFanTime','updateFurnaceTime', 'outsideFactors', 'generateTemp', 'sendNewTemp']
 	ran_func = random.choice(function)
 	file.write("b " + ran_func + "\n")
+	file.write("run\n")
+	
 	# walk a random number of steps
-	steps = random.randint(0, 20)
+	steps = random.randint(0, 10)
 	file.write("si " + str(steps) + "\n")
+	
 	# read the memory location
+	if(function == "main"):
+		rand_list = list_main
+	elif(function == "currentTempChanged"):
+		rand_list = list_currentTempChanged
+	# TODO: complete listing the different lists here
+
+
+	temp_mem_location = rand_list[steps].split(":")
+	mem_location = temp_mem_location[0]
+	print "mem" + mem_location
+
+	new_mem_location = int(mem_location, 16) + steps; 	# TODO: convert string 
+														# to hex to binary and then OR it or somethine
+	
 	# change something
-	file.write("b generateTemp\n")
+	file.write("set $" + str(mem_location) + " = $" + str(new_mem_location) + "\n")
+
 	file.write("end\n")
 
 

@@ -1,0 +1,11 @@
+Finsih writing and polishing the genfaults script by Monday
+Meet on Monday during our regular meeting time
+
+It's better to be able to run the python script from the terminal
+	and call gdb from within the python script so don't have the dependency
+	of needing gdb to extend python software and can run it anywhere
+
+Create a final report detailing everything I have done and researched this semester,
+	along with the genfaults script and the results from running that
+	
+Complete and send the report by 4pm on Dec 24th so Simha can give me a grade
