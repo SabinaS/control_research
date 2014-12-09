@@ -2,12 +2,14 @@
 
 import sys
 import os
+
 # first open the objdump.txt file
 try:
 	objdump_file = open('objdump.txt', "r")
 except IOError:
 	print "There was an error reading from objdump.txt"
 	system.exit();
+#look for data and code addresses 
 
 # Opening the config file
 try: 
@@ -29,12 +31,12 @@ print "file to debug " + file_to_debug
 
 
 # config.txt contains the variables:
-# file_to_debug
-# isntr_prob
-# datamem_prob
-# datareg_prob
-# branch_prob
-# arith_prob
+	# file_to_debug
+	# isntr_prob
+	# datamem_prob
+	# datareg_prob
+	# branch_prob
+	# arith_prob
 
 for item in lines:
 	print item
@@ -72,7 +74,12 @@ for x in range (0, 10):
 	file = open(file_name, 'w+')
 	file.write("define change_file\n")
 	# b at a random location (from function calls)
+	function = {'main', 'currentTempChanged', 'setFurnaceFanStates', 'updateFanTime','updateFurnaceTime', 'outsideFactors', 'generateTemp', 'sendNewTemp'}
+	ran_func = random.choose(function); 
+	file.write("b " + ran_func)
 	# walk a random number of steps
+	steps = random.randint(0, 100)
+	file.write("si " + str(steps))
 	# read the memory location
 	# change something
 	file.write("b generateTemp\n")
