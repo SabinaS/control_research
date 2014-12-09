@@ -1,0 +1,8 @@
+bang_bang_controller.c 
+instr 0.3
+datamem 0.2
+datareg 0.4
+branch 0.3
+arith 0.2
+autofault 1
+

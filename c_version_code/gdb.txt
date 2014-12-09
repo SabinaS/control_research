@@ -1,0 +1,37 @@
+Already logging to gdb.txt.
+Currently logging to "gdb.txt".
+Future logs will be written to add.txt.
+Logs will be appended to the log file.
+Output is being logged and displayed.
+Breakpoint 1 at 0x40054d: file add.c, line 7.
+Starting program: /home/ss3912/control_research/c_version_code/add 
+
+Breakpoint 1, main () at add.c:7
+7		a = rand() %100;
+step #1
+rand () at rand.c:27
+27	rand.c: No such file or directory.
+step #2
+28	in rand.c
+step #3
+__random () at random.c:293
+293	random.c: No such file or directory.
+step #4
+296	in random.c
+step #5
+298	in random.c
+step #6
+__random_r (buf=0x7ffff7dd36a0, result=0x7fffffffe5dc) at random_r.c:367
+367	random_r.c: No such file or directory.
+step #7
+372	in random_r.c
+step #8
+370	in random_r.c
+A debugging session is active.
+
+	Inferior 1 [process 31584] will be killed.
+
+Quit anyway? (y or n) Currently logging to "gdb.txt".
+Future logs will be written to add_output.txt.
+Logs will be appended to the log file.
+Output is being logged and displayed.
