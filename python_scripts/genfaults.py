@@ -8,7 +8,7 @@ try:
 	objdump_file = open('objdump.txt', "r")
 except IOError:
 	print "There was an error reading from objdump.txt"
-	system.exit();
+	sys.exit();
 
 #look for addresses 
 objdump_lines = objdump_file.readlines()
@@ -70,7 +70,7 @@ try:
 	print "Opened the file to be read"
 except IOError:
 	print "There was an error reading from config.txt"
-	system.exit();
+	sys.exit();
 
 # Reading each line from the file
 config_lines = config_file.readlines()
