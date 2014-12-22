@@ -1,3 +1,5 @@
 define change_file
-b outsideFactorssi 11b generateTemp
+b sendNewTemp
+si 18
+b generateTemp
 end

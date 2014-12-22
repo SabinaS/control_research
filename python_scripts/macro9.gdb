@@ -1,3 +1,5 @@
 define change_file
-b sendNewTempsi 6b generateTemp
+b updateFurnaceTime
+si 17
+b generateTemp
 end

@@ -1,3 +1,5 @@
 define change_file
-b outsideFactorssi 19b generateTemp
+b setFurnaceFanStates
+si 8
+b generateTemp
 end

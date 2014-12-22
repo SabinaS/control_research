@@ -1,3 +1,5 @@
 define change_file
-b generateTempsi 10b generateTemp
+b currentTempChanged
+si 9
+b generateTemp
 end

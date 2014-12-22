@@ -1,3 +1,5 @@
 define change_file
-b updateFanTimesi 15b generateTemp
+b updateFanTime
+si 9
+b generateTemp
 end
