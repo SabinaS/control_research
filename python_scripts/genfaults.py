@@ -1,11 +1,12 @@
 #!/usr/bin/python
-
+	
 import sys
 import os
+import random
 
 # First open the objdump.txt file
 try:
-	objdump_file = open('objdump.txt', "r")
+	objdump_file = open("objdump.txt", "r")
 except IOError:
 	print "There was an error reading from objdump.txt"
 	sys.exit();
@@ -23,50 +24,50 @@ list_setFurnaceFanStates = []
 list_currentTempChanged = []
 list_main = []
 
-function_states = [false, false, false, false, false, false, false, false]
+function_states = [False, False, False, False, False, False, False, False]
 
 for item in objdump_lines:
-	# for each function, set a var so we know once we've reached its addresses 
+	# for each function, set a var so we know once we"ve reached its addresses 
 	if("<sendNewTemp>" in item):
-		function_states = [true, false, false, false, false, false, false, false]
+		function_states = [True, False, False, False, False, False, False, False]
 	elif("<generateTemp>" in item):
-		function_states = [false, true, false, false, false, false, false, false]
+		function_states = [False, True, False, False, False, False, False, False]
 	elif("<outsideFactors>" in item):
-		function_states = [false, false, true, false, false, false, false, false]
+		function_states = [False, False, True, False, False, False, False, False]
 	elif("<updateFurnaceTime>" in item):
-		function_states = [false, false, false, true, false, false, false, false]
+		function_states = [False, False, False, True, False, False, False, False]
 	elif("<updateFanTime>" in item):
-		function_states = [false, false, false, false, true, false, false, false]
+		function_states = [False, False, False, False, True, False, False, False]
 	elif("<setFurnaceFanStates>" in item):
-		function_states = [false, false, false, false, false, true, false, false]
+		function_states = [False, False, False, False, False, True, False, False]
 	elif("<currentTempChanged>" in item):
-		function_states = [false, false, false, false, false, false, true, false]
+		function_states = [False, False, False, False, False, False, True, False]
 	elif("<main>" in item):
-		function_states = [false, false, false, false, false, false, false, true]
+		function_states = [False, False, False, False, False, False, False, True]
 	
-	# place the addresses of each function into that function's list
-	if(function_states[0] == true):
+	# place the addresses of each function into that function"s list
+	if(function_states[0] == True):
 		list_sendNewTemp.append(item)
-	if(function_states[1] == true):
+	if(function_states[1] == True):
 		list_generateTemp.append(item)
-	if(function_states[2] == true):
+	if(function_states[2] == True):
 		list_outsideFactors.append(item)
-	if(function_states[3] == true):
+	if(function_states[3] == True):
 		list_updateFuranceTime.append(item)
-	if(function_states[4] == true):
+	if(function_states[4] == True):
 		list_updateFanTime.append(item)
-	if(function_states[5] == true):
+	if(function_states[5] == True):
 		list_setFurnaceFanStates.append(item)
-	if(function_states[6] == true):
+	if(function_states[6] == True):
 		list_currentTempChanged.append(item)
-	if(function_states[7] == true):
+	if(function_states[7] == True):
 		list_main.append(item)
 
 
 	
 # Then open the config file
 try: 
-	config_file = open('config.txt', "r")
+	config_file = open("config.txt", "r")
 	print "Opened the file to be read"
 except IOError:
 	print "There was an error reading from config.txt"
@@ -108,7 +109,7 @@ for item in config_lines:
 
 	
 # Close the file
-file_object.close
+config_file.close
 
 # Define the gdb macros
 macros_to_create = 10
@@ -116,11 +117,11 @@ for x in range (0, 10):
 	file_name = "macro" + str(x) + ".gdb"
 	# print "file_name" + file_name
 
-	file = open(file_name, 'w+')
+	file = open(file_name, "w+")
 	file.write("define change_file\n")
 	# b at a random location (from function calls)
-	function = {'main', 'currentTempChanged', 'setFurnaceFanStates', 'updateFanTime','updateFurnaceTime', 'outsideFactors', 'generateTemp', 'sendNewTemp'}
-	ran_func = random.choose(function); 
+	function = ["main", "currentTempChanged", "setFurnaceFanStates", "updateFanTime","updateFurnaceTime", "outsideFactors", "generateTemp", "sendNewTemp"]
+	ran_func = random.choice(function); 
 	file.write("b " + ran_func)
 	# walk a random number of steps
 	steps = random.randint(0, 20)
