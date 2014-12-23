@@ -1,0 +1,17 @@
+ToDo
+1. python script takes config.txt file and reads in the probability of various faults
+2. objdump
+	a. extract the code and data section of addresses from the binary
+        b. can use libraries to help you find where the code and data addresses begin and end
+
+
+Python
+1. https://sourceware.org/gdb/current/onlinedocs/gdb/Python-Commands.html#Python-Commands 
+       a. To run a python script in gdb
+           i. need to configure GDB to recognize the script language based on the filename extension using the script-extension setting
+            ii. first source the script file: source script-name
+            iii. then run the script file: python execfile (“script-name”)
+2. http://stackoverflow.com/questions/4060565/how-to-script-gdb-with-python-example-add-breakpoints-run-what-breakpoint-d
+        a. can call python code from gdb command line
+        b. to call gdb functions, just use gdb.function (ex: gdb.newest_frame(), gdb.execute(“start”), gdb.continue(“continue”))
+

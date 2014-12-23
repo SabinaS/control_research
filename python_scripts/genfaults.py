@@ -122,13 +122,16 @@ for x in range (0, 10):
 	# b at a random location (from function calls)
 	function = ["main", "currentTempChanged", "setFurnaceFanStates", "updateFanTime","updateFurnaceTime", "outsideFactors", "generateTemp", "sendNewTemp"]
 	ran_func = random.choice(function); 
+	# file.write("b generateTemp\n")
 	file.write("b " + ran_func + "\n")
 	# walk a random number of steps
 	steps = random.randint(0, 20)
 	file.write("si " + str(steps) + "\n")
 	# read the memory location
+	file.write("run\n");
+	file.write("continue\n");
 	# change something
-	file.write("b generateTemp\n")
+	file.wri("continue\n");
 	file.write("end\n")
 
 
