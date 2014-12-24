@@ -1,6 +1,6 @@
 define change_file6
-b main
+b sendNewTemp
 run
-si 18
+si 14
 continue
 end

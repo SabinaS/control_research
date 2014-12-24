@@ -1,6 +1,6 @@
 define change_file2
-b updateFanTime
+b generateTemp
 run
-si 16
+si 10
 continue
 end

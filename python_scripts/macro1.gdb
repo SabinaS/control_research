@@ -1,6 +1,6 @@
 define change_file1
-b outsideFactors
+b updateFurnaceTime
 run
-si 1
+si 19
 continue
 end

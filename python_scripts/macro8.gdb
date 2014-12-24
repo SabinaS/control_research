@@ -1,6 +1,6 @@
 define change_file8
-b main
+b updateFanTime
 run
-si 13
+si 15
 continue
 end

@@ -1,6 +1,6 @@
 define change_file5
-b setFurnaceFanStates
+b currentTempChanged
 run
-si 9
+si 5
 continue
 end

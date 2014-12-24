@@ -1,6 +1,6 @@
 define change_file3
-b setFurnaceFanStates
+b updateFurnaceTime
 run
-si 10
+si 8
 continue
 end

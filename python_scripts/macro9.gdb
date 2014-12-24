@@ -1,6 +1,6 @@
 define change_file9
-b outsideFactors
+b generateTemp
 run
-si 8
+si 20
 continue
 end

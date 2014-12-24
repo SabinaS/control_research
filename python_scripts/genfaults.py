@@ -12,23 +12,22 @@ def write_error_line(error_prob_names, file):
 		print "we got to instr"
 		if(rand_func == "sendNewTemp"):
 			to_return = ("set *(char*) 0x00000000004005a0 = 0x20\n") # mov to and
-			print "instr and sendNewTemp"
+			# print "instr and sendNewTemp"
 		elif(rand_func == "generateTemp"):
 			to_return = ("set *(char*) 0x000000000040062c = 0x20\n") # mov to and
-			to_return = ("set *(char*) 0x0000000000400605 = 0x1A\n") # cmp to sub
-			print "instr and generate"
+			# print "instr and generate"
 		elif(rand_func == "outsideFactors"):
 			to_return = ("set *(char*) 0x0000000000400661 = 0x1A\n") # cmp to sub
 		elif(rand_func == "updateFurnaceTime"):
 			to_return = ("set *(char*) 0x00000000004006ea = 0x1A\n") # pop to sub
-			print "instr and furnace"
+			# print "instr and furnace"
 		elif(rand_func == "updateFanTime"):
 			to_return = ("set *(char*) 0x00000000004006f6 = 0x1A\n") # cmp to sub
 		elif(rand_func == "setFurnaceFanStates"):
 			to_return = ("set *(char*) 0x0000000000400713 = 0x20\n") # mov to and
 		elif(rand_func == "currentTempChanged"):
 			to_return = ("set *(char*) 0x000000000040078a = 0x20\n") # mov to and
-			print "instr and currentTemp"
+			# print "instr and currentTemp"
 		elif(rand_func == "main"):
 			to_return = ("set *(char*) 0x00000000004008a6 = 0x20\n") # mov to and
 		else:
@@ -38,7 +37,6 @@ def write_error_line(error_prob_names, file):
 			to_return = ("set *(char*) 0x00000000004005b0 = 0x77\n") # jne to ja
 		elif(rand_func == "generateTemp"):
 			to_return = ("set *(char*) 0x0000000000400608 = 0x74\n") # jne to je
-			to_return = ("set *(char*) 0x0000000000400621 = 0x77\n") # jne to ja
 		elif(rand_func == "outsideFactors"):
 			to_return = ("set *(char*) 0x0000000000400664 = 0x77\n") # jne to ja
 		elif(rand_func == "updateFurnaceTime"):
@@ -55,7 +53,6 @@ def write_error_line(error_prob_names, file):
 		if(rand_func == "sendNewTemp"):
 			to_return = ("set *(char*) 0x00000000004005cc = 0x21\n") # add to and
 		elif(rand_func == "generateTemp"):
-			to_return = ("set *(char*) 0x00000000004005f2 = 0x3A\n") # sub to cmp
 			to_return = ("set *(char*) 0x0000000000400629 = 0x5A\n") # sub to pop
 		elif(rand_func == "outsideFactors"):
 			to_return = ("set *(char*) 0x000000000040064e = 0x1E\n") # sub to push
@@ -64,6 +61,28 @@ def write_error_line(error_prob_names, file):
 			to_return = ("set *(char*) 0x00000000004006db = 0x21\n") # add to and
 		elif(rand_func == "updateFanTime"):
 			to_return = ("set *(char*) 0x0000000000400701 = 0x21\n") # add to and
+		else:
+			to_return = ("continue\n")
+	elif(error_prob_names == "datareg"):
+		# walk a random number of steps
+		steps = random.randint(0, 20)
+		# to_return = ("si " + str(steps) + "\n")
+		if(rand_func == "sendNewTemp"):
+			to_return = ("set $4005a0 = $4005cc\n") 
+		elif(rand_func == "generateTemp"):
+			to_return = ("set $40062c = $400621\n") 
+		elif(rand_func == "outsideFactors"):
+			to_return = ("set $400661 = $4006be\n") 
+		elif(rand_func == "updateFurnaceTime"):
+			to_return = ("set $4006ea = $4006db\n") 
+		elif(rand_func == "updateFanTime"):
+			to_return = ("set $4006f6 = $4006f9\n") 
+		elif(rand_func == "setFurnaceFanStates"):
+			to_return = ("set $400713 = $40074e\n") 
+		elif(rand_func == "currentTempChanged"):
+			to_return = ("set $40078a = $40080e\n") 
+		elif(rand_func == "main"):
+			to_return = ("set $4008a6 = $400876\n") 
 		else:
 			to_return = ("continue\n")
 	return to_return; 
@@ -75,10 +94,10 @@ except IOError:
 	print "There was an error reading from objdump.txt"
 	sys.exit();
 
-#look for addresses 
+# look for addresses 
 objdump_lines = objdump_file.readlines()
 
-# lists to place teh different function addresses into 
+# lists to place the different function addresses into 
 list_sendNewTemp = []
 list_generateTemp = []
 list_outsideFactors = []
