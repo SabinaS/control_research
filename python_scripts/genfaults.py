@@ -124,8 +124,8 @@ for x in range (0, 10):
 
 	# b at a random location (from function calls) then run
 	function = ["main", "currentTempChanged", "setFurnaceFanStates", "updateFanTime","updateFurnaceTime", "outsideFactors", "generateTemp", "sendNewTemp"]
-	ran_func = random.choice(function); 
-	file.write("b " + ran_func + "\n")
+	rand_func = random.choice(function); 
+	file.write("b " + rand_func + "\n")
 	file.write("run\n");
 
 	# Choose an error based on the probability
@@ -137,7 +137,8 @@ for x in range (0, 10):
 			print "chosen one: " + error_probs_names[y]
 			# TODO stuff 
 			if(error_probs_names[y] == "instr"):
-				
+				if(rand_func == "sendNewTemp):
+					file.write("set ")
 			break
 	
 	# walk a random number of steps
@@ -148,7 +149,7 @@ for x in range (0, 10):
 	# TODO 
 
 	# change something
-	file.write("continue\n");
+	file.write("continue\n")
 	file.write("end\n")
 
 
