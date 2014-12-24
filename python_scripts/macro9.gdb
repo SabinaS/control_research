@@ -1,6 +1,6 @@
 define change_file9
 b setFurnaceFanStates
 run
-si 9
+si 0
 continue
 end

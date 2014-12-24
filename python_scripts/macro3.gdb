@@ -1,6 +1,6 @@
 define change_file3
-b updateFanTime
+b sendNewTemp
 run
-si 16
+si 15
 continue
 end

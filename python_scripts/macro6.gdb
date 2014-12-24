@@ -1,6 +1,6 @@
 define change_file6
-b updateFanTime
+b currentTempChanged
 run
-si 19
+si 1
 continue
 end

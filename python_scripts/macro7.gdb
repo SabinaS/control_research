@@ -1,6 +1,6 @@
 define change_file7
-b generateTemp
+b updateFurnaceTime
 run
-si 4
+si 5
 continue
 end

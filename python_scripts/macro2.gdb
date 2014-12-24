@@ -1,6 +1,6 @@
 define change_file2
-b setFurnaceFanStates
+b sendNewTemp
 run
-si 17
+si 15
 continue
 end
