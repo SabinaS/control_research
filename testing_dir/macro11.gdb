@@ -1,11 +1,11 @@
-define change_file6
+define change_file11
 b setFurnaceFanStates
 run
-set *(char*) 0x000000000040074e = 0x7D
-si 4
+set *(char*) 0x0000000000400713 = 0x20
+si 7
 continue
 end
 
 document setFurnaceFanStates
-branch
+instr
 end
