@@ -4,6 +4,63 @@ import sys
 import os
 import random
 
+# define a function
+def write_error_line(error_prob_names, file):
+	to_return = "continue\n"
+	if(error_probs_names == "instr"):
+		if(rand_func == "sendNewTemp"):
+			file.write("set *(char*) 0x00000000004005a0 = 0x20\n") # mov to and
+		elif(rand_func == "generateTemp"):
+			file.write("set *(char*) 0x000000000040062c = 0x20\n") # mov to and
+			file.write("set *(char*) 0x0000000000400605 = 0x1A\n") # cmp to sub
+		elif(rand_func == "outsideFactors"):
+			file.write("set *(char*) 0x0000000000400661 = 0x1A\n") # cmp to sub
+		elif(rand_func == "updateFurnaceTime"):
+			file.write("set *(char*) 0x00000000004006ea = 0x1A\n") # pop to sub
+		elif(rand_func == "updateFanTime"):
+			file.write("set *(char*) 0x00000000004006f6 = 0x1A\n") # cmp to sub
+		elif(rand_func == "setFurnaceFanStates"):
+			file.write("set *(char*) 0x0000000000400713 = 0x20\n") # mov to and
+		elif(rand_func == "currentTempChanged"):
+			file.write("set *(char*) 0x000000000040078a = 0x20\n") # mov to and
+		elif(rand_func == "main"):
+			file.write("set *(char*) 0x00000000004008a6 = 0x20\n") # mov to and
+		else:
+			file.write("continue\n")
+	elif(error_probs_names == "branch"):
+		if(rand_func == "sendNewTemp"):
+			file.write("set *(char*) 0x00000000004005b0 = 0x77\n") # jne to ja
+		elif(rand_func == "generateTemp"):
+			file.write("set *(char*) 0x0000000000400608 = 0x74\n") # jne to je
+			file.write("set *(char*) 0x0000000000400621 = 0x77\n") # jne to ja
+		elif(rand_func == "outsideFactors"):
+			file.write("set *(char*) 0x0000000000400664 = 0x77\n") # jne to ja
+		elif(rand_func == "updateFurnaceTime"):
+			file.write("set *(char*) 0x00000000004006d3 = 0x77\n") # 
+		elif(rand_func == "updateFanTime"):
+			file.write("set *(char*) 0x00000000004006f9 = 0x77\n") #
+		elif(rand_func == "setFurnaceFanStates"):
+			file.write("set *(char*) 0x000000000040074e = 0x7D\n") # jne to jge 
+		elif(rand_func == "currentTempChanged"):
+			file.write("set *(char*) 0x0000000000400775 = 0x7E\n") # jg to jle
+		else:
+			file.write("continue\n")
+	elif(error_prob_names == "arith"):
+		if(rand_func == "sendNewTemp"):
+			file.write("set *(char*) 0x00000000004005cc = 0x21\n") # add to and
+		elif(rand_func == "generateTemp"):
+			file.write("set *(char*) 0x00000000004005f2 = 0x3A\n") # sub to cmp
+			file.write("set *(char*) 0x0000000000400629 = 0x5A\n") # sub to pop
+		elif(rand_func == "outsideFactors"):
+			file.write("set *(char*) 0x000000000040064e = 0x1E\n") # sub to push
+			file.write("set *(char*) 0x000000000040068a = 0x09\n") # add to or
+		elif(rand_func == "updateFurnaceTime"):
+			file.write("set *(char*) 0x00000000004006db = 0x21\n") # add to and
+		elif(rand_func == "updateFanTime"):
+			file.write("set *(char*) 0x0000000000400701 = 0x21\n") # add to and
+		else:
+			file.write("continue\n")
+		
 # First open the objdump.txt file
 try:
 	objdump_file = open("objdump.txt", "r")
@@ -135,12 +192,10 @@ for x in range (0, 10):
 		random_error_prob = random_error_prob - float(error_probs[y])
 		if(random_error_prob <= 0):
 			print "chosen one: " + error_probs_names[y]
-			# TODO stuff 
-			if(error_probs_names[y] == "instr"):
-				if(rand_func == "sendNewTemp):
-					file.write("set ")
+			# TODO write the error line in the macro for each chosen error
+			write_error_line(error_probs_names[y], file)
 			break
-	
+
 	# walk a random number of steps
 	steps = random.randint(0, 20)
 	file.write("si " + str(steps) + "\n")

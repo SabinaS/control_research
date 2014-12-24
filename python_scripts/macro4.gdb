@@ -1,6 +1,6 @@
 define change_file4
-b updateFanTime
+b updateFurnaceTime
 run
-si 1
+si 10
 continue
 end

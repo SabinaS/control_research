@@ -1,6 +1,6 @@
 define change_file5
-b sendNewTemp
+b updateFurnaceTime
 run
-si 13
+si 19
 continue
 end

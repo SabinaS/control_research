@@ -1,6 +1,6 @@
 define change_file1
-b outsideFactors
+b setFurnaceFanStates
 run
-si 3
+si 0
 continue
 end

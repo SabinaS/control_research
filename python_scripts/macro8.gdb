@@ -1,6 +1,6 @@
 define change_file8
-b outsideFactors
+b updateFanTime
 run
-si 19
+si 11
 continue
 end
