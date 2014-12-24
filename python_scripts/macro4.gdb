@@ -1,6 +1,6 @@
 define change_file4
-b generateTemp
+b main
 run
-si 17
+si 14
 continue
 end

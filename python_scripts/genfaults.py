@@ -7,27 +7,33 @@ import random
 # define a function
 def write_error_line(error_prob_names, file):
 	to_return = "continue\n"
-	if(error_probs_names == "instr"):
+	print "error_prob_namez: " + error_prob_names
+	if(error_prob_names == "instr"):
+		print "we got to instr"
 		if(rand_func == "sendNewTemp"):
 			to_return = ("set *(char*) 0x00000000004005a0 = 0x20\n") # mov to and
+			print "instr and sendNewTemp"
 		elif(rand_func == "generateTemp"):
 			to_return = ("set *(char*) 0x000000000040062c = 0x20\n") # mov to and
 			to_return = ("set *(char*) 0x0000000000400605 = 0x1A\n") # cmp to sub
+			print "instr and generate"
 		elif(rand_func == "outsideFactors"):
 			to_return = ("set *(char*) 0x0000000000400661 = 0x1A\n") # cmp to sub
 		elif(rand_func == "updateFurnaceTime"):
 			to_return = ("set *(char*) 0x00000000004006ea = 0x1A\n") # pop to sub
+			print "instr and furnace"
 		elif(rand_func == "updateFanTime"):
 			to_return = ("set *(char*) 0x00000000004006f6 = 0x1A\n") # cmp to sub
 		elif(rand_func == "setFurnaceFanStates"):
 			to_return = ("set *(char*) 0x0000000000400713 = 0x20\n") # mov to and
 		elif(rand_func == "currentTempChanged"):
 			to_return = ("set *(char*) 0x000000000040078a = 0x20\n") # mov to and
+			print "instr and currentTemp"
 		elif(rand_func == "main"):
 			to_return = ("set *(char*) 0x00000000004008a6 = 0x20\n") # mov to and
 		else:
 			to_return = ("continue\n")
-	elif(error_probs_names == "branch"):
+	elif(error_prob_names == "branch"):
 		if(rand_func == "sendNewTemp"):
 			to_return = ("set *(char*) 0x00000000004005b0 = 0x77\n") # jne to ja
 		elif(rand_func == "generateTemp"):
@@ -109,6 +115,7 @@ for item in objdump_lines:
 	if(function_states[1] == True):
 		list_generateTemp.append(item)
 	if(function_states[2] == True):
+
 		list_outsideFactors.append(item)
 	if(function_states[3] == True):
 		list_updateFuranceTime.append(item)
@@ -183,6 +190,7 @@ for x in range (0, 10):
 	# b at a random location (from function calls) then run
 	function = ["main", "currentTempChanged", "setFurnaceFanStates", "updateFanTime","updateFurnaceTime", "outsideFactors", "generateTemp", "sendNewTemp"]
 	rand_func = random.choice(function); 
+	print "rand_func" + rand_func
 	file.write("b " + rand_func + "\n")
 	file.write("run\n");
 

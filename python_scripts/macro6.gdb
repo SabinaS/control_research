@@ -1,6 +1,6 @@
 define change_file6
-b currentTempChanged
+b main
 run
-si 1
+si 18
 continue
 end

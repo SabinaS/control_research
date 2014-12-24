@@ -1,6 +1,6 @@
 define change_file7
-b updateFurnaceTime
+b currentTempChanged
 run
-si 5
+si 14
 continue
 end
