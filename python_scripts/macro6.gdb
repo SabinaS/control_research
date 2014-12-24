@@ -1,6 +1,10 @@
 define change_file6
-b sendNewTemp
+b generateTemp
 run
-si 14
+set *(char*) 0x000000000040062c = 0x20
+si 5
 continue
+end
+document generateTemp
+instr
 end

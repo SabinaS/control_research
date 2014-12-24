@@ -1,6 +1,10 @@
 define change_file0
-b updateFanTime
+b outsideFactors
 run
-si 2
+set $400661 = $4006be
+si 20
 continue
+end
+document outsideFactors
+datareg
 end

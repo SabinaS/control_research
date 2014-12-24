@@ -222,11 +222,12 @@ for x in range (0, 10):
 			print "chosen one: " + error_probs_names[y]
 			# TODO write the error line in the macro for each chosen error
 			return_error_line = write_error_line(error_probs_names[y], file)
+			file.write(return_error_line)
 			print "returned error: " + return_error_line
 			break
 
 	# walk a random number of steps
-	steps = random.randint(0, 20)
+	steps = random.randint(0, 10)
 	file.write("si " + str(steps) + "\n")
 	
 	# read the memory location
@@ -234,7 +235,12 @@ for x in range (0, 10):
 
 	# change something
 	file.write("continue\n")
-	file.write("end\n")
+	file.write("end\n") 
+
+	# write the documentation
+	file.write("document " + rand_func + "\n")
+	file.write(error_probs_names[y] + "\n")
+	file.write("end")
 
 
 

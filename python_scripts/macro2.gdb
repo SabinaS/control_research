@@ -1,6 +1,10 @@
 define change_file2
-b generateTemp
+b outsideFactors
 run
-si 10
+set $400661 = $4006be
+si 16
 continue
+end
+document outsideFactors
+datareg
 end
