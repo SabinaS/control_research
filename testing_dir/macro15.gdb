@@ -1,11 +1,16 @@
-define change_file15
-b outsideFactors
+define macro15
+b main
 run
-set $400661 = $4006be
+set $4008a6 = $400876
 si 8
+continue
+continue
+continue
+continue
+continue
 continue
 end
 
-document outsideFactors
+document macro15
 datareg
 end

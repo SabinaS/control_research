@@ -1,11 +1,16 @@
-define change_file10
+define macro10
 b sendNewTemp
 run
-set $4005a0 = $4005cc
-si 10
+set *(char*) 0x00000000004005a0 = 0x20
+si 8
+continue
+continue
+continue
+continue
+continue
 continue
 end
 
-document sendNewTemp
-datareg
+document macro10
+instr
 end

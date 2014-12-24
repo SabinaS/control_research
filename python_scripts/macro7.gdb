@@ -1,11 +1,16 @@
-define change_file7
+define macro7
 b updateFanTime
 run
-set *(char*) 0x00000000004006f6 = 0x1A
-si 7
+set *(char*) 0x00000000004006f9 = 0x77
+si 4
+continue
+continue
+continue
+continue
+continue
 continue
 end
 
-document updateFanTime
-instr
+document macro7
+branch
 end

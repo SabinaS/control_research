@@ -1,11 +1,16 @@
-define change_file0
+define macro0
 b main
 run
-set *(char*) 0x00000000004008a6 = 0x20
-si 8
+set $4008a6 = $400876
+si 3
+continue
+continue
+continue
+continue
+continue
 continue
 end
 
-document main
-instr
+document macro0
+datareg
 end

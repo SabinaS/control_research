@@ -1,11 +1,16 @@
-define change_file3
-b updateFanTime
+define macro3
+b generateTemp
 run
 continue
-si 5
+si 1
+continue
+continue
+continue
+continue
+continue
 continue
 end
 
-document updateFanTime
+document macro3
 datamem
 end

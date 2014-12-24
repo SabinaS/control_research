@@ -1,11 +1,16 @@
-define change_file11
-b setFurnaceFanStates
+define macro11
+b main
 run
-set *(char*) 0x0000000000400713 = 0x20
-si 7
+set $4008a6 = $400876
+si 8
+continue
+continue
+continue
+continue
+continue
 continue
 end
 
-document setFurnaceFanStates
-instr
+document macro11
+datareg
 end

@@ -1,11 +1,16 @@
-define change_file8
-b currentTempChanged
+define macro8
+b generateTemp
 run
-set $40078a = $40080e
-si 6
+set *(char*) 0x000000000040062c = 0x20
+si 0
+continue
+continue
+continue
+continue
+continue
 continue
 end
 
-document currentTempChanged
-datareg
+document macro8
+instr
 end

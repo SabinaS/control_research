@@ -1,11 +1,16 @@
-define change_file2
-b main
+define macro2
+b updateFanTime
 run
+set *(char*) 0x00000000004006f9 = 0x77
+si 9
 continue
-si 7
+continue
+continue
+continue
+continue
 continue
 end
 
-document main
-datamem
+document macro2
+branch
 end

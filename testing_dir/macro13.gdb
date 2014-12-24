@@ -1,11 +1,16 @@
-define change_file13
+define macro13
 b outsideFactors
 run
 set $400661 = $4006be
-si 2
+si 8
+continue
+continue
+continue
+continue
+continue
 continue
 end
 
-document outsideFactors
+document macro13
 datareg
 end

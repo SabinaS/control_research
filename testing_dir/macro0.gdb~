@@ -1,7 +1,7 @@
 define macro0
 b main
 run
-si 30
+si 20
 set $4008a6 = $400876
 si 3
 continue

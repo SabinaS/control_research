@@ -1,11 +1,16 @@
-define change_file14
-b generateTemp
+define macro14
+b outsideFactors
 run
-set *(char*) 0x000000000040062c = 0x20
-si 10
+set *(char*) 0x0000000000400664 = 0x77
+si 0
+continue
+continue
+continue
+continue
+continue
 continue
 end
 
-document generateTemp
-instr
+document macro14
+branch
 end

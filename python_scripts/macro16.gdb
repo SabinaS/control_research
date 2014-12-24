@@ -1,11 +1,16 @@
-define change_file16
-b setFurnaceFanStates
+define macro16
+b generateTemp
 run
-set *(char*) 0x0000000000400713 = 0x20
-si 5
+set $40062c = $400621
+si 8
+continue
+continue
+continue
+continue
+continue
 continue
 end
 
-document setFurnaceFanStates
-instr
+document macro16
+datareg
 end

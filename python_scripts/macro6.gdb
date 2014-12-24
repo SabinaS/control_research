@@ -1,11 +1,16 @@
-define change_file6
-b setFurnaceFanStates
+define macro6
+b main
 run
-set *(char*) 0x000000000040074e = 0x7D
-si 4
+continue
+si 2
+continue
+continue
+continue
+continue
+continue
 continue
 end
 
-document setFurnaceFanStates
-branch
+document macro6
+datamem
 end

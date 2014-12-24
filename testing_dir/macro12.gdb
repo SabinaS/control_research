@@ -1,11 +1,16 @@
-define change_file12
-b sendNewTemp
+define macro12
+b generateTemp
 run
-set $4005a0 = $4005cc
-si 0
+set $40062c = $400621
+si 3
+continue
+continue
+continue
+continue
+continue
 continue
 end
 
-document sendNewTemp
+document macro12
 datareg
 end

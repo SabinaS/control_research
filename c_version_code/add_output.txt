@@ -51,3 +51,316 @@ Quit anyway? (y or n) 8		printf("Rand a: %d\n", a);
 Breakpoint 2 at 0x4005fa: file add.c, line 13.
 $1 = 83
 [Inferior 1 (process 22603) exited normally]
+108		} else if (newTemp > 72) {
+114		} else if (newTemp == 70) {
+119			printf("Runtime: %d, Temp: %d\n", run_time, newTemp);
+120			sendNewTemp(); 
+
+Breakpoint 1, currentTempChanged (newTemp=73) at bang_bang_controller.c:102
+102		if (newTemp < 68) {
+Breakpoint 2 at 0x400771: file bang_bang_controller.c, line 102.
+No symbol "add.c" in current context.
+Continuing.
+
+Breakpoint 1, currentTempChanged (newTemp=72) at bang_bang_controller.c:102
+102		if (newTemp < 68) {
+Breakpoint 3 at 0x4005f6: file bang_bang_controller.c, line 40.
+warning: no loadable sections found in added symbol-file system-supplied DSO at 0x7ffff7ffa000
+
+Breakpoint 3, generateTemp () at bang_bang_controller.c:40
+40		int newTemp = old_temp;
+
+Breakpoint 1, currentTempChanged (newTemp=65) at bang_bang_controller.c:102
+102		if (newTemp < 68) {
+
+Breakpoint 3, generateTemp () at bang_bang_controller.c:40
+40		int newTemp = old_temp;
+
+Breakpoint 1, currentTempChanged (newTemp=64) at bang_bang_controller.c:102
+102		if (newTemp < 68) {
+
+Breakpoint 3, generateTemp () at bang_bang_controller.c:40
+40		int newTemp = old_temp;
+
+Breakpoint 1, currentTempChanged (newTemp=64) at bang_bang_controller.c:102
+102		if (newTemp < 68) {
+
+Breakpoint 3, generateTemp () at bang_bang_controller.c:40
+40		int newTemp = old_temp;
+
+Breakpoint 1, currentTempChanged (newTemp=64) at bang_bang_controller.c:102
+102		if (newTemp < 68) {
+
+Breakpoint 3, generateTemp () at bang_bang_controller.c:40
+40		int newTemp = old_temp;
+
+Breakpoint 1, currentTempChanged (newTemp=65) at bang_bang_controller.c:102
+102		if (newTemp < 68) {
+
+Breakpoint 3, generateTemp () at bang_bang_controller.c:40
+40		int newTemp = old_temp;
+Breakpoint 4 at 0x400771: file bang_bang_controller.c, line 102.
+warning: no loadable sections found in added symbol-file system-supplied DSO at 0x7ffff7ffa000
+
+Breakpoint 3, generateTemp () at bang_bang_controller.c:40
+40		int newTemp = old_temp;
+
+Breakpoint 1, currentTempChanged (newTemp=65) at bang_bang_controller.c:102
+102		if (newTemp < 68) {
+
+Breakpoint 3, generateTemp () at bang_bang_controller.c:40
+40		int newTemp = old_temp;
+
+Breakpoint 1, currentTempChanged (newTemp=66) at bang_bang_controller.c:102
+102		if (newTemp < 68) {
+
+Breakpoint 3, generateTemp () at bang_bang_controller.c:40
+40		int newTemp = old_temp;
+
+Breakpoint 1, currentTempChanged (newTemp=68) at bang_bang_controller.c:102
+102		if (newTemp < 68) {
+
+Breakpoint 3, generateTemp () at bang_bang_controller.c:40
+40		int newTemp = old_temp;
+
+Breakpoint 1, currentTempChanged (newTemp=70) at bang_bang_controller.c:102
+102		if (newTemp < 68) {
+Continuing.
+
+Breakpoint 3, generateTemp () at bang_bang_controller.c:40
+40		int newTemp = old_temp;
+Continuing.
+
+Breakpoint 1, currentTempChanged (newTemp=73) at bang_bang_controller.c:102
+102		if (newTemp < 68) {
+Continuing.
+
+Breakpoint 3, generateTemp () at bang_bang_controller.c:40
+40		int newTemp = old_temp;
+Continuing.
+
+Breakpoint 1, currentTempChanged (newTemp=72) at bang_bang_controller.c:102
+102		if (newTemp < 68) {
+Continuing.
+
+Breakpoint 3, generateTemp () at bang_bang_controller.c:40
+40		int newTemp = old_temp;
+Breakpoint 5 at 0x40087a: file bang_bang_controller.c, line 128.
+warning: no loadable sections found in added symbol-file system-supplied DSO at 0x7ffff7ffa000
+
+Breakpoint 5, main () at bang_bang_controller.c:128
+128		int init_furnace_state = 0;
+129		int init_fan_state = 0;
+130		furnace_time = 0;
+131		fan_time = 0;
+132		run_time = 0;
+134		setStartTemp(65);
+0x00000000004008ab	134		setStartTemp(65);
+setStartTemp (startTemp=0) at bang_bang_controller.c:19
+19	{
+0x0000000000400585	19	{
+0x0000000000400588	19	{
+20		new_temp = startTemp; 
+0x000000000040058e	20		new_temp = startTemp; 
+21		old_temp = startTemp;
+0x0000000000400597	21		old_temp = startTemp;
+22	}
+0x000000000040059e	22	}
+main () at bang_bang_controller.c:135
+135		setFurnaceFanStates(init_furnace_state, init_fan_state);
+0x00000000004008b3	135		setFurnaceFanStates(init_furnace_state, init_fan_state);
+0x00000000004008b6	135		setFurnaceFanStates(init_furnace_state, init_fan_state);
+0x00000000004008b8	135		setFurnaceFanStates(init_furnace_state, init_fan_state);
+0x00000000004008ba	135		setFurnaceFanStates(init_furnace_state, init_fan_state);
+setFurnaceFanStates (furnaceState=65, fanState=4196560)
+    at bang_bang_controller.c:88
+88	{
+0x0000000000400713	88	{
+0x0000000000400716	88	{
+0x000000000040071a	88	{
+0x000000000040071d	88	{
+89		furnace_running = furnaceState;
+0x0000000000400723	89		furnace_running = furnaceState;
+90		if (furnace_running == 0)
+0x000000000040072f	90		if (furnace_running == 0)
+
+Breakpoint 3, generateTemp () at bang_bang_controller.c:40
+40		int newTemp = old_temp;
+Continuing.
+
+Breakpoint 1, currentTempChanged (newTemp=65) at bang_bang_controller.c:102
+102		if (newTemp < 68) {
+Quit
+Continuing.
+
+Breakpoint 3, generateTemp () at bang_bang_controller.c:40
+40		int newTemp = old_temp;
+Continuing.
+
+Breakpoint 1, currentTempChanged (newTemp=66) at bang_bang_controller.c:102
+102		if (newTemp < 68) {
+Breakpoint 6 at 0x40087a: file bang_bang_controller.c, line 128.
+warning: no loadable sections found in added symbol-file system-supplied DSO at 0x7ffff7ffa000
+
+Breakpoint 5, main () at bang_bang_controller.c:128
+128		int init_furnace_state = 0;
+129		int init_fan_state = 0;
+130		furnace_time = 0;
+131		fan_time = 0;
+132		run_time = 0;
+134		setStartTemp(65);
+0x00000000004008ab	134		setStartTemp(65);
+setStartTemp (startTemp=0) at bang_bang_controller.c:19
+19	{
+0x0000000000400585	19	{
+0x0000000000400588	19	{
+20		new_temp = startTemp; 
+0x000000000040058e	20		new_temp = startTemp; 
+21		old_temp = startTemp;
+0x0000000000400597	21		old_temp = startTemp;
+22	}
+0x000000000040059e	22	}
+main () at bang_bang_controller.c:135
+135		setFurnaceFanStates(init_furnace_state, init_fan_state);
+
+Breakpoint 3, generateTemp () at bang_bang_controller.c:40
+40		int newTemp = old_temp;
+Continuing.
+
+Breakpoint 1, currentTempChanged (newTemp=65) at bang_bang_controller.c:102
+102		if (newTemp < 68) {
+Continuing.
+
+Breakpoint 3, generateTemp () at bang_bang_controller.c:40
+40		int newTemp = old_temp;
+Continuing.
+
+Breakpoint 1, currentTempChanged (newTemp=66) at bang_bang_controller.c:102
+102		if (newTemp < 68) {
+Already logging to add_output.txt.
+103			printf("Runtime: %d, Temp: %d\n", run_time, newTemp);
+104			furnace_state = 1;
+105			fan_state = 0;
+106			setFurnaceFanStates(furnace_state, fan_state);
+
+Breakpoint 3, generateTemp () at bang_bang_controller.c:40
+40		int newTemp = old_temp;
+Breakpoint 7 at 0x4005f6: file bang_bang_controller.c, line 40.
+eax            0x0	0
+
+Breakpoint 1, currentTempChanged (newTemp=68) at bang_bang_controller.c:102
+102		if (newTemp < 68) {
+Already logging to add_output.txt.
+108		} else if (newTemp > 72) {
+114		} else if (newTemp == 70) {
+119			printf("Runtime: %d, Temp: %d\n", run_time, newTemp);
+120			sendNewTemp(); 
+
+Breakpoint 3, generateTemp () at bang_bang_controller.c:40
+40		int newTemp = old_temp;
+Breakpoint 8 at 0x4005f6: file bang_bang_controller.c, line 40.
+eax            0x0	0
+
+Breakpoint 1, currentTempChanged (newTemp=70) at bang_bang_controller.c:102
+102		if (newTemp < 68) {
+Breakpoint 9 at 0x400771: file bang_bang_controller.c, line 102.
+warning: no loadable sections found in added symbol-file system-supplied DSO at 0x7ffff7ffa000
+
+Breakpoint 5, main () at bang_bang_controller.c:128
+128		int init_furnace_state = 0;
+
+Breakpoint 3, generateTemp () at bang_bang_controller.c:40
+40		int newTemp = old_temp;
+
+Breakpoint 1, currentTempChanged (newTemp=65) at bang_bang_controller.c:102
+102		if (newTemp < 68) {
+
+Breakpoint 3, generateTemp () at bang_bang_controller.c:40
+40		int newTemp = old_temp;
+
+Program received signal SIGSEGV, Segmentation fault.
+0x000000000040076a in currentTempChanged (newTemp=66)
+    at bang_bang_controller.c:100
+100	void currentTempChanged(int newTemp){
+
+Program terminated with signal SIGSEGV, Segmentation fault.
+The program no longer exists.
+The program is not being run.
+Breakpoint 10 at 0x4005f6: file bang_bang_controller.c, line 40.
+warning: no loadable sections found in added symbol-file system-supplied DSO at 0x7ffff7ffa000
+
+Breakpoint 5, main () at bang_bang_controller.c:128
+128		int init_furnace_state = 0;
+
+Breakpoint 3, generateTemp () at bang_bang_controller.c:40
+40		int newTemp = old_temp;
+
+Breakpoint 1, currentTempChanged (newTemp=65) at bang_bang_controller.c:102
+102		if (newTemp < 68) {
+
+Breakpoint 3, generateTemp () at bang_bang_controller.c:40
+40		int newTemp = old_temp;
+
+Program received signal SIGSEGV, Segmentation fault.
+0x0000000000400612 in generateTemp () at bang_bang_controller.c:42
+42			newTemp = old_temp + 1;
+
+Program terminated with signal SIGSEGV, Segmentation fault.
+The program no longer exists.
+The program is not being run.
+Breakpoint 11 at 0x40087a: file bang_bang_controller.c, line 128.
+warning: no loadable sections found in added symbol-file system-supplied DSO at 0x7ffff7ffa000
+
+Breakpoint 5, main () at bang_bang_controller.c:128
+128		int init_furnace_state = 0;
+129		int init_fan_state = 0;
+130		furnace_time = 0;
+131		fan_time = 0;
+132		run_time = 0;
+134		setStartTemp(65);
+0x00000000004008ab	134		setStartTemp(65);
+
+Breakpoint 3, generateTemp () at bang_bang_controller.c:40
+40		int newTemp = old_temp;
+Continuing.
+
+Breakpoint 1, currentTempChanged (newTemp=65601) at bang_bang_controller.c:102
+102		if (newTemp < 68) {
+Quit
+Breakpoint 12 at 0x400771: file bang_bang_controller.c, line 102.
+
+Breakpoint 5, main () at bang_bang_controller.c:128
+128		int init_furnace_state = 0;
+129		int init_fan_state = 0;
+130		furnace_time = 0;
+
+Breakpoint 3, generateTemp () at bang_bang_controller.c:40
+40		int newTemp = old_temp;
+
+Breakpoint 1, currentTempChanged (newTemp=65) at bang_bang_controller.c:102
+102		if (newTemp < 68) {
+
+Breakpoint 3, generateTemp () at bang_bang_controller.c:40
+40		int newTemp = old_temp;
+Continuing.
+
+Breakpoint 1, currentTempChanged (newTemp=66) at bang_bang_controller.c:102
+102		if (newTemp < 68) {
+Continuing.
+
+Breakpoint 3, generateTemp () at bang_bang_controller.c:40
+40		int newTemp = old_temp;
+Continuing.
+
+Breakpoint 1, currentTempChanged (newTemp=68) at bang_bang_controller.c:102
+102		if (newTemp < 68) {
+Continuing.
+
+Breakpoint 3, generateTemp () at bang_bang_controller.c:40
+40		int newTemp = old_temp;
+Undefined command: "pc".  Try "help".
+A debugging session is active.
+
+	Inferior 1 [process 20176] will be killed.
+
+Quit anyway? (y or n) 

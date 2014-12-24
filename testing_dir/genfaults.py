@@ -192,10 +192,11 @@ config_file.close
 macros_to_create = 20
 for x in range (0, macros_to_create):
 	file_name = "macro" + str(x) + ".gdb"
+	function_name = "macro" + str(x)
 	
 	# Open the file
 	file = open(file_name, "w+")
-	file.write("define change_file" + str(x) + "\n")
+	file.write("define " + function_name + "\n")
 
 	# Break at a random location (from function calls) then run
 	function = ["main", "currentTempChanged", "setFurnaceFanStates", "updateFanTime","updateFurnaceTime", "outsideFactors", "generateTemp", "sendNewTemp"]
@@ -226,10 +227,16 @@ for x in range (0, macros_to_create):
 
 	# Continue the program
 	file.write("continue\n")
+	file.write("continue\n")
+	file.write("continue\n")
+	file.write("continue\n")
+	file.write("continue\n")
+	file.write("continue\n")
 	file.write("end\n\n") 
 
 	# Write the documentation
-	file.write("document " + rand_func + "\n")
+	# The file_name could be more descriptive
+	file.write("document " + function_name + "\n")
 	file.write(error_probs_names[y] + "\n")
 	file.write("end")
 

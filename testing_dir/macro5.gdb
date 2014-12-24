@@ -1,11 +1,16 @@
-define change_file5
-b main
+define macro5
+b currentTempChanged
 run
+set *(char*) 0x000000000040078a = 0x20
+si 7
 continue
-si 10
+continue
+continue
+continue
+continue
 continue
 end
 
-document main
-datamem
+document macro5
+instr
 end

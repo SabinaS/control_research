@@ -1,11 +1,16 @@
-define change_file17
-b main
+define macro17
+b updateFanTime
 run
-set $4008a6 = $400876
-si 6
+set *(char*) 0x00000000004006f9 = 0x77
+si 1
+continue
+continue
+continue
+continue
+continue
 continue
 end
 
-document main
-datareg
+document macro17
+branch
 end

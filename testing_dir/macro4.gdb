@@ -1,11 +1,16 @@
-define change_file4
-b updateFurnaceTime
+define macro4
+b sendNewTemp
 run
-set *(char*) 0x00000000004006d3 = 0x77
-si 1
+continue
+si 6
+continue
+continue
+continue
+continue
+continue
 continue
 end
 
-document updateFurnaceTime
-branch
+document macro4
+datamem
 end
