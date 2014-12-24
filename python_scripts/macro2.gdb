@@ -1,10 +1,11 @@
 define change_file2
-b outsideFactors
+b sendNewTemp
 run
-set $400661 = $4006be
-si 16
+set *(char*) 0x00000000004005a0 = 0x20
+si 1
 continue
 end
-document outsideFactors
-datareg
+
+document sendNewTemp
+instr
 end

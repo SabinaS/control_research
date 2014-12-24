@@ -1,10 +1,11 @@
 define change_file3
-b sendNewTemp
+b currentTempChanged
 run
-set *(char*) 0x00000000004005a0 = 0x20
-si 16
+set *(char*) 0x0000000000400775 = 0x7E
+si 9
 continue
 end
-document sendNewTemp
-instr
+
+document currentTempChanged
+branch
 end

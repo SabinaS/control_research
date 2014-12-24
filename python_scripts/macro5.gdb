@@ -1,10 +1,11 @@
 define change_file5
-b currentTempChanged
+b setFurnaceFanStates
 run
-set *(char*) 0x000000000040078a = 0x20
-si 14
+set $400713 = $40074e
+si 9
 continue
 end
-document currentTempChanged
-instr
+
+document setFurnaceFanStates
+datareg
 end

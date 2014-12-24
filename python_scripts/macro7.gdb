@@ -1,10 +1,11 @@
 define change_file7
-b setFurnaceFanStates
+b outsideFactors
 run
-set $400713 = $40074e
-si 19
+set $400661 = $4006be
+si 6
 continue
 end
-document setFurnaceFanStates
+
+document outsideFactors
 datareg
 end

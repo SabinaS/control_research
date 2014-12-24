@@ -1,10 +1,11 @@
 define change_file6
-b generateTemp
+b outsideFactors
 run
-set *(char*) 0x000000000040062c = 0x20
-si 5
+set *(char*) 0x0000000000400661 = 0x1A
+si 1
 continue
 end
-document generateTemp
+
+document outsideFactors
 instr
 end

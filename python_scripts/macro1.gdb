@@ -1,10 +1,11 @@
 define change_file1
-b setFurnaceFanStates
+b updateFanTime
 run
-set $400713 = $40074e
-si 12
+continue
+si 2
 continue
 end
-document setFurnaceFanStates
-datareg
+
+document updateFanTime
+datamem
 end

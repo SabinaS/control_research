@@ -1,10 +1,11 @@
 define change_file0
-b outsideFactors
+b setFurnaceFanStates
 run
-set $400661 = $4006be
-si 20
+set *(char*) 0x000000000040074e = 0x7D
+si 1
 continue
 end
-document outsideFactors
-datareg
+
+document setFurnaceFanStates
+branch
 end

@@ -1,10 +1,11 @@
 define change_file9
-b setFurnaceFanStates
+b generateTemp
 run
-set $400713 = $40074e
-si 13
+set $40062c = $400621
+si 0
 continue
 end
-document setFurnaceFanStates
+
+document generateTemp
 datareg
 end

@@ -1,10 +1,11 @@
 define change_file4
-b updateFurnaceTime
+b setFurnaceFanStates
 run
-set *(char*) 0x00000000004006ea = 0x1A
-si 6
+continue
+si 3
 continue
 end
-document updateFurnaceTime
-instr
+
+document setFurnaceFanStates
+datamem
 end

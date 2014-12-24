@@ -1,10 +1,11 @@
 define change_file8
-b sendNewTemp
+b currentTempChanged
 run
-set *(char*) 0x00000000004005b0 = 0x77
-si 1
+set $40078a = $40080e
+si 8
 continue
 end
-document sendNewTemp
-branch
+
+document currentTempChanged
+datareg
 end
