@@ -1,5 +1,6 @@
-define change_file
-b setFurnaceFanStates
-si 8
-b generateTemp
+define change_file4
+b updateFanTime
+run
+si 1
+continue
 end

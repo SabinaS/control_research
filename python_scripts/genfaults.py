@@ -106,7 +106,8 @@ for item in config_lines:
 		temp_arith = item.split()
 		arith_prob = temp_arith[1]
 
-
+error_probs = [instr_prob, datamem_prob, datareg_prob, branch_prob, arith_prob]
+error_probs_names = ["instr", "datamem", "datareg", "branch", "arith"]
 	
 # Close the file
 config_file.close
@@ -116,22 +117,38 @@ macros_to_create = 10
 for x in range (0, 10):
 	file_name = "macro" + str(x) + ".gdb"
 	# print "file_name" + file_name
-
+	
+	# open the file
 	file = open(file_name, "w+")
-	file.write("define change_file\n")
-	# b at a random location (from function calls)
+	file.write("define change_file" + str(x) + "\n")
+
+	# b at a random location (from function calls) then run
 	function = ["main", "currentTempChanged", "setFurnaceFanStates", "updateFanTime","updateFurnaceTime", "outsideFactors", "generateTemp", "sendNewTemp"]
 	ran_func = random.choice(function); 
-	# file.write("b generateTemp\n")
 	file.write("b " + ran_func + "\n")
+	file.write("run\n");
+
+	# Choose an error based on the probability
+	random_error_prob = round(random.uniform(0, 1), 1)
+	print "random_error_prob" + str(random_error_prob)
+	for y in range(len(error_probs)):
+		random_error_prob = random_error_prob - float(error_probs[y])
+		if(random_error_prob <= 0):
+			print "chosen one: " + error_probs_names[y]
+			# TODO stuff 
+			if(error_probs_names[y] == "instr"):
+				
+			break
+	
 	# walk a random number of steps
 	steps = random.randint(0, 20)
 	file.write("si " + str(steps) + "\n")
+	
 	# read the memory location
-	file.write("run\n");
-	file.write("continue\n");
+	# TODO 
+
 	# change something
-	file.wri("continue\n");
+	file.write("continue\n");
 	file.write("end\n")
 
 

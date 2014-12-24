@@ -1,5 +1,6 @@
-define change_file
-b updateFanTime
-si 9
-b generateTemp
+define change_file3
+b sendNewTemp
+run
+si 14
+continue
 end

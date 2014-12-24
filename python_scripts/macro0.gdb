@@ -1,5 +1,6 @@
-define change_file
-b sendNewTemp
-si 11
-b generateTemp
+define change_file0
+b main
+run
+si 3
+continue
 end

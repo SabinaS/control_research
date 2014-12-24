@@ -1,5 +1,6 @@
-define change_file
-b generateTemp
-si 16
-b generateTemp
+define change_file1
+b outsideFactors
+run
+si 3
+continue
 end
