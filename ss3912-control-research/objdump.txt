@@ -1,0 +1,468 @@
+
+bang_bang_controller:     file format elf64-x86-64
+
+
+Disassembly of section .init:
+
+0000000000400438 <_init>:
+  400438:	48 83 ec 08          	sub    $0x8,%rsp
+  40043c:	e8 8b 00 00 00       	callq  4004cc <call_gmon_start>
+  400441:	e8 1a 01 00 00       	callq  400560 <frame_dummy>
+  400446:	e8 25 05 00 00       	callq  400970 <__do_global_ctors_aux>
+  40044b:	48 83 c4 08          	add    $0x8,%rsp
+  40044f:	c3                   	retq   
+
+Disassembly of section .plt:
+
+0000000000400450 <puts@plt-0x10>:
+  400450:	ff 35 9a 0b 20 00    	pushq  0x200b9a(%rip)        # 600ff0 <_GLOBAL_OFFSET_TABLE_+0x8>
+  400456:	ff 25 9c 0b 20 00    	jmpq   *0x200b9c(%rip)        # 600ff8 <_GLOBAL_OFFSET_TABLE_+0x10>
+  40045c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000400460 <puts@plt>:
+  400460:	ff 25 9a 0b 20 00    	jmpq   *0x200b9a(%rip)        # 601000 <_GLOBAL_OFFSET_TABLE_+0x18>
+  400466:	68 00 00 00 00       	pushq  $0x0
+  40046b:	e9 e0 ff ff ff       	jmpq   400450 <_init+0x18>
+
+0000000000400470 <printf@plt>:
+  400470:	ff 25 92 0b 20 00    	jmpq   *0x200b92(%rip)        # 601008 <_GLOBAL_OFFSET_TABLE_+0x20>
+  400476:	68 01 00 00 00       	pushq  $0x1
+  40047b:	e9 d0 ff ff ff       	jmpq   400450 <_init+0x18>
+
+0000000000400480 <__libc_start_main@plt>:
+  400480:	ff 25 8a 0b 20 00    	jmpq   *0x200b8a(%rip)        # 601010 <_GLOBAL_OFFSET_TABLE_+0x28>
+  400486:	68 02 00 00 00       	pushq  $0x2
+  40048b:	e9 c0 ff ff ff       	jmpq   400450 <_init+0x18>
+
+0000000000400490 <exit@plt>:
+  400490:	ff 25 82 0b 20 00    	jmpq   *0x200b82(%rip)        # 601018 <_GLOBAL_OFFSET_TABLE_+0x30>
+  400496:	68 03 00 00 00       	pushq  $0x3
+  40049b:	e9 b0 ff ff ff       	jmpq   400450 <_init+0x18>
+
+Disassembly of section .text:
+
+00000000004004a0 <_start>:
+  4004a0:	31 ed                	xor    %ebp,%ebp
+  4004a2:	49 89 d1             	mov    %rdx,%r9
+  4004a5:	5e                   	pop    %rsi
+  4004a6:	48 89 e2             	mov    %rsp,%rdx
+  4004a9:	48 83 e4 f0          	and    $0xfffffffffffffff0,%rsp
+  4004ad:	50                   	push   %rax
+  4004ae:	54                   	push   %rsp
+  4004af:	49 c7 c0 60 09 40 00 	mov    $0x400960,%r8
+  4004b6:	48 c7 c1 d0 08 40 00 	mov    $0x4008d0,%rcx
+  4004bd:	48 c7 c7 72 08 40 00 	mov    $0x400872,%rdi
+  4004c4:	e8 b7 ff ff ff       	callq  400480 <__libc_start_main@plt>
+  4004c9:	f4                   	hlt    
+  4004ca:	90                   	nop
+  4004cb:	90                   	nop
+
+00000000004004cc <call_gmon_start>:
+  4004cc:	48 83 ec 08          	sub    $0x8,%rsp
+  4004d0:	48 8b 05 09 0b 20 00 	mov    0x200b09(%rip),%rax        # 600fe0 <_DYNAMIC+0x190>
+  4004d7:	48 85 c0             	test   %rax,%rax
+  4004da:	74 02                	je     4004de <call_gmon_start+0x12>
+  4004dc:	ff d0                	callq  *%rax
+  4004de:	48 83 c4 08          	add    $0x8,%rsp
+  4004e2:	c3                   	retq   
+  4004e3:	90                   	nop
+  4004e4:	90                   	nop
+  4004e5:	90                   	nop
+  4004e6:	90                   	nop
+  4004e7:	90                   	nop
+  4004e8:	90                   	nop
+  4004e9:	90                   	nop
+  4004ea:	90                   	nop
+  4004eb:	90                   	nop
+  4004ec:	90                   	nop
+  4004ed:	90                   	nop
+  4004ee:	90                   	nop
+  4004ef:	90                   	nop
+
+00000000004004f0 <__do_global_dtors_aux>:
+  4004f0:	55                   	push   %rbp
+  4004f1:	48 89 e5             	mov    %rsp,%rbp
+  4004f4:	53                   	push   %rbx
+  4004f5:	48 83 ec 08          	sub    $0x8,%rsp
+  4004f9:	80 3d 30 0b 20 00 00 	cmpb   $0x0,0x200b30(%rip)        # 601030 <__bss_start>
+  400500:	75 4b                	jne    40054d <__do_global_dtors_aux+0x5d>
+  400502:	bb 40 0e 60 00       	mov    $0x600e40,%ebx
+  400507:	48 8b 05 2a 0b 20 00 	mov    0x200b2a(%rip),%rax        # 601038 <dtor_idx.6533>
+  40050e:	48 81 eb 38 0e 60 00 	sub    $0x600e38,%rbx
+  400515:	48 c1 fb 03          	sar    $0x3,%rbx
+  400519:	48 83 eb 01          	sub    $0x1,%rbx
+  40051d:	48 39 d8             	cmp    %rbx,%rax
+  400520:	73 24                	jae    400546 <__do_global_dtors_aux+0x56>
+  400522:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+  400528:	48 83 c0 01          	add    $0x1,%rax
+  40052c:	48 89 05 05 0b 20 00 	mov    %rax,0x200b05(%rip)        # 601038 <dtor_idx.6533>
+  400533:	ff 14 c5 38 0e 60 00 	callq  *0x600e38(,%rax,8)
+  40053a:	48 8b 05 f7 0a 20 00 	mov    0x200af7(%rip),%rax        # 601038 <dtor_idx.6533>
+  400541:	48 39 d8             	cmp    %rbx,%rax
+  400544:	72 e2                	jb     400528 <__do_global_dtors_aux+0x38>
+  400546:	c6 05 e3 0a 20 00 01 	movb   $0x1,0x200ae3(%rip)        # 601030 <__bss_start>
+  40054d:	48 83 c4 08          	add    $0x8,%rsp
+  400551:	5b                   	pop    %rbx
+  400552:	5d                   	pop    %rbp
+  400553:	c3                   	retq   
+  400554:	66 66 66 2e 0f 1f 84 	data32 data32 nopw %cs:0x0(%rax,%rax,1)
+  40055b:	00 00 00 00 00 
+
+0000000000400560 <frame_dummy>:
+  400560:	48 83 3d e0 08 20 00 	cmpq   $0x0,0x2008e0(%rip)        # 600e48 <__JCR_END__>
+  400567:	00 
+  400568:	55                   	push   %rbp
+  400569:	48 89 e5             	mov    %rsp,%rbp
+  40056c:	74 12                	je     400580 <frame_dummy+0x20>
+  40056e:	b8 00 00 00 00       	mov    $0x0,%eax
+  400573:	48 85 c0             	test   %rax,%rax
+  400576:	74 08                	je     400580 <frame_dummy+0x20>
+  400578:	5d                   	pop    %rbp
+  400579:	bf 48 0e 60 00       	mov    $0x600e48,%edi
+  40057e:	ff e0                	jmpq   *%rax
+  400580:	5d                   	pop    %rbp
+  400581:	c3                   	retq   
+  400582:	90                   	nop
+  400583:	90                   	nop
+
+0000000000400584 <setStartTemp>:
+  400584:	55                   	push   %rbp
+  400585:	48 89 e5             	mov    %rsp,%rbp
+  400588:	89 7d fc             	mov    %edi,-0x4(%rbp)
+  40058b:	8b 45 fc             	mov    -0x4(%rbp),%eax
+  40058e:	89 05 c4 0a 20 00    	mov    %eax,0x200ac4(%rip)        # 601058 <new_temp>
+  400594:	8b 45 fc             	mov    -0x4(%rbp),%eax
+  400597:	89 05 b7 0a 20 00    	mov    %eax,0x200ab7(%rip)        # 601054 <old_temp>
+  40059d:	5d                   	pop    %rbp
+  40059e:	c3                   	retq   
+
+000000000040059f <sendNewTemp>:
+  40059f:	55                   	push   %rbp
+  4005a0:	48 89 e5             	mov    %rsp,%rbp
+  4005a3:	48 83 ec 10          	sub    $0x10,%rsp
+  4005a7:	8b 05 b3 0a 20 00    	mov    0x200ab3(%rip),%eax        # 601060 <run_time>
+  4005ad:	83 f8 64             	cmp    $0x64,%eax
+  4005b0:	75 14                	jne    4005c6 <sendNewTemp+0x27>
+  4005b2:	bf c0 09 40 00       	mov    $0x4009c0,%edi
+  4005b7:	e8 a4 fe ff ff       	callq  400460 <puts@plt>
+  4005bc:	bf 00 00 00 00       	mov    $0x0,%edi
+  4005c1:	e8 ca fe ff ff       	callq  400490 <exit@plt>
+  4005c6:	8b 05 94 0a 20 00    	mov    0x200a94(%rip),%eax        # 601060 <run_time>
+  4005cc:	83 c0 01             	add    $0x1,%eax
+  4005cf:	89 05 8b 0a 20 00    	mov    %eax,0x200a8b(%rip)        # 601060 <run_time>
+  4005d5:	b8 00 00 00 00       	mov    $0x0,%eax
+  4005da:	e8 0f 00 00 00       	callq  4005ee <generateTemp>
+  4005df:	89 45 fc             	mov    %eax,-0x4(%rbp)
+  4005e2:	8b 45 fc             	mov    -0x4(%rbp),%eax
+  4005e5:	89 c7                	mov    %eax,%edi
+  4005e7:	e8 7a 01 00 00       	callq  400766 <currentTempChanged>
+  4005ec:	c9                   	leaveq 
+  4005ed:	c3                   	retq   
+
+00000000004005ee <generateTemp>:
+  4005ee:	55                   	push   %rbp
+  4005ef:	48 89 e5             	mov    %rsp,%rbp
+  4005f2:	48 83 ec 10          	sub    $0x10,%rsp
+  4005f6:	8b 05 58 0a 20 00    	mov    0x200a58(%rip),%eax        # 601054 <old_temp>
+  4005fc:	89 45 f8             	mov    %eax,-0x8(%rbp)
+  4005ff:	8b 05 47 0a 20 00    	mov    0x200a47(%rip),%eax        # 60104c <furnace_running>
+  400605:	83 f8 01             	cmp    $0x1,%eax
+  400608:	75 0e                	jne    400618 <generateTemp+0x2a>
+  40060a:	8b 05 44 0a 20 00    	mov    0x200a44(%rip),%eax        # 601054 <old_temp>
+  400610:	83 c0 01             	add    $0x1,%eax
+  400613:	89 45 f8             	mov    %eax,-0x8(%rbp)
+  400616:	eb 17                	jmp    40062f <generateTemp+0x41>
+  400618:	8b 05 22 0a 20 00    	mov    0x200a22(%rip),%eax        # 601040 <fan_running>
+  40061e:	83 f8 01             	cmp    $0x1,%eax
+  400621:	75 0c                	jne    40062f <generateTemp+0x41>
+  400623:	8b 05 2b 0a 20 00    	mov    0x200a2b(%rip),%eax        # 601054 <old_temp>
+  400629:	83 e8 01             	sub    $0x1,%eax
+  40062c:	89 45 f8             	mov    %eax,-0x8(%rbp)
+  40062f:	8b 45 f8             	mov    -0x8(%rbp),%eax
+  400632:	89 c7                	mov    %eax,%edi
+  400634:	e8 11 00 00 00       	callq  40064a <outsideFactors>
+  400639:	89 45 fc             	mov    %eax,-0x4(%rbp)
+  40063c:	8b 45 fc             	mov    -0x4(%rbp),%eax
+  40063f:	89 05 0f 0a 20 00    	mov    %eax,0x200a0f(%rip)        # 601054 <old_temp>
+  400645:	8b 45 fc             	mov    -0x4(%rbp),%eax
+  400648:	c9                   	leaveq 
+  400649:	c3                   	retq   
+
+000000000040064a <outsideFactors>:
+  40064a:	55                   	push   %rbp
+  40064b:	48 89 e5             	mov    %rsp,%rbp
+  40064e:	48 83 ec 20          	sub    $0x20,%rsp
+  400652:	89 7d ec             	mov    %edi,-0x14(%rbp)
+  400655:	8b 45 ec             	mov    -0x14(%rbp),%eax
+  400658:	89 45 fc             	mov    %eax,-0x4(%rbp)
+  40065b:	8b 05 eb 09 20 00    	mov    0x2009eb(%rip),%eax        # 60104c <furnace_running>
+  400661:	83 f8 01             	cmp    $0x1,%eax
+  400664:	75 29                	jne    40068f <outsideFactors+0x45>
+  400666:	bf 01 00 00 00       	mov    $0x1,%edi
+  40066b:	b8 00 00 00 00       	mov    $0x0,%eax
+  400670:	e8 51 00 00 00       	callq  4006c6 <updateFurnaceTime>
+  400675:	89 05 c9 09 20 00    	mov    %eax,0x2009c9(%rip)        # 601044 <furnace_time>
+  40067b:	8b 05 c3 09 20 00    	mov    0x2009c3(%rip),%eax        # 601044 <furnace_time>
+  400681:	89 c2                	mov    %eax,%edx
+  400683:	c1 ea 1f             	shr    $0x1f,%edx
+  400686:	01 d0                	add    %edx,%eax
+  400688:	d1 f8                	sar    %eax
+  40068a:	01 45 fc             	add    %eax,-0x4(%rbp)
+  40068d:	eb 32                	jmp    4006c1 <outsideFactors+0x77>
+  40068f:	8b 05 ab 09 20 00    	mov    0x2009ab(%rip),%eax        # 601040 <fan_running>
+  400695:	83 f8 01             	cmp    $0x1,%eax
+  400698:	75 27                	jne    4006c1 <outsideFactors+0x77>
+  40069a:	bf 01 00 00 00       	mov    $0x1,%edi
+  40069f:	b8 00 00 00 00       	mov    $0x0,%eax
+  4006a4:	e8 43 00 00 00       	callq  4006ec <updateFanTime>
+  4006a9:	89 05 99 09 20 00    	mov    %eax,0x200999(%rip)        # 601048 <fan_time>
+  4006af:	8b 05 93 09 20 00    	mov    0x200993(%rip),%eax        # 601048 <fan_time>
+  4006b5:	89 c2                	mov    %eax,%edx
+  4006b7:	c1 ea 1f             	shr    $0x1f,%edx
+  4006ba:	01 d0                	add    %edx,%eax
+  4006bc:	d1 f8                	sar    %eax
+  4006be:	29 45 fc             	sub    %eax,-0x4(%rbp)
+  4006c1:	8b 45 fc             	mov    -0x4(%rbp),%eax
+  4006c4:	c9                   	leaveq 
+  4006c5:	c3                   	retq   
+
+00000000004006c6 <updateFurnaceTime>:
+  4006c6:	55                   	push   %rbp
+  4006c7:	48 89 e5             	mov    %rsp,%rbp
+  4006ca:	8b 05 7c 09 20 00    	mov    0x20097c(%rip),%eax        # 60104c <furnace_running>
+  4006d0:	83 f8 01             	cmp    $0x1,%eax
+  4006d3:	75 0f                	jne    4006e4 <updateFurnaceTime+0x1e>
+  4006d5:	8b 05 69 09 20 00    	mov    0x200969(%rip),%eax        # 601044 <furnace_time>
+  4006db:	83 c0 01             	add    $0x1,%eax
+  4006de:	89 05 60 09 20 00    	mov    %eax,0x200960(%rip)        # 601044 <furnace_time>
+  4006e4:	8b 05 5a 09 20 00    	mov    0x20095a(%rip),%eax        # 601044 <furnace_time>
+  4006ea:	5d                   	pop    %rbp
+  4006eb:	c3                   	retq   
+
+00000000004006ec <updateFanTime>:
+  4006ec:	55                   	push   %rbp
+  4006ed:	48 89 e5             	mov    %rsp,%rbp
+  4006f0:	8b 05 4a 09 20 00    	mov    0x20094a(%rip),%eax        # 601040 <fan_running>
+  4006f6:	83 f8 01             	cmp    $0x1,%eax
+  4006f9:	75 0f                	jne    40070a <updateFanTime+0x1e>
+  4006fb:	8b 05 47 09 20 00    	mov    0x200947(%rip),%eax        # 601048 <fan_time>
+  400701:	83 c0 01             	add    $0x1,%eax
+  400704:	89 05 3e 09 20 00    	mov    %eax,0x20093e(%rip)        # 601048 <fan_time>
+  40070a:	8b 05 38 09 20 00    	mov    0x200938(%rip),%eax        # 601048 <fan_time>
+  400710:	5d                   	pop    %rbp
+  400711:	c3                   	retq   
+
+0000000000400712 <setFurnaceFanStates>:
+  400712:	55                   	push   %rbp
+  400713:	48 89 e5             	mov    %rsp,%rbp
+  400716:	48 83 ec 10          	sub    $0x10,%rsp
+  40071a:	89 7d fc             	mov    %edi,-0x4(%rbp)
+  40071d:	89 75 f8             	mov    %esi,-0x8(%rbp)
+  400720:	8b 45 fc             	mov    -0x4(%rbp),%eax
+  400723:	89 05 23 09 20 00    	mov    %eax,0x200923(%rip)        # 60104c <furnace_running>
+  400729:	8b 05 1d 09 20 00    	mov    0x20091d(%rip),%eax        # 60104c <furnace_running>
+  40072f:	85 c0                	test   %eax,%eax
+  400731:	75 0a                	jne    40073d <setFurnaceFanStates+0x2b>
+  400733:	c7 05 07 09 20 00 00 	movl   $0x0,0x200907(%rip)        # 601044 <furnace_time>
+  40073a:	00 00 00 
+  40073d:	8b 45 f8             	mov    -0x8(%rbp),%eax
+  400740:	89 05 fa 08 20 00    	mov    %eax,0x2008fa(%rip)        # 601040 <fan_running>
+  400746:	8b 05 f4 08 20 00    	mov    0x2008f4(%rip),%eax        # 601040 <fan_running>
+  40074c:	85 c0                	test   %eax,%eax
+  40074e:	75 0a                	jne    40075a <setFurnaceFanStates+0x48>
+  400750:	c7 05 ee 08 20 00 00 	movl   $0x0,0x2008ee(%rip)        # 601048 <fan_time>
+  400757:	00 00 00 
+  40075a:	b8 00 00 00 00       	mov    $0x0,%eax
+  40075f:	e8 3b fe ff ff       	callq  40059f <sendNewTemp>
+  400764:	c9                   	leaveq 
+  400765:	c3                   	retq   
+
+0000000000400766 <currentTempChanged>:
+  400766:	55                   	push   %rbp
+  400767:	48 89 e5             	mov    %rsp,%rbp
+  40076a:	48 83 ec 10          	sub    $0x10,%rsp
+  40076e:	89 7d fc             	mov    %edi,-0x4(%rbp)
+  400771:	83 7d fc 43          	cmpl   $0x43,-0x4(%rbp)
+  400775:	7f 4b                	jg     4007c2 <currentTempChanged+0x5c>
+  400777:	8b 0d e3 08 20 00    	mov    0x2008e3(%rip),%ecx        # 601060 <run_time>
+  40077d:	b8 ce 09 40 00       	mov    $0x4009ce,%eax
+  400782:	8b 55 fc             	mov    -0x4(%rbp),%edx
+  400785:	89 ce                	mov    %ecx,%esi
+  400787:	48 89 c7             	mov    %rax,%rdi
+  40078a:	b8 00 00 00 00       	mov    $0x0,%eax
+  40078f:	e8 dc fc ff ff       	callq  400470 <printf@plt>
+  400794:	c7 05 b2 08 20 00 01 	movl   $0x1,0x2008b2(%rip)        # 601050 <furnace_state>
+  40079b:	00 00 00 
+  40079e:	c7 05 b4 08 20 00 00 	movl   $0x0,0x2008b4(%rip)        # 60105c <fan_state>
+  4007a5:	00 00 00 
+  4007a8:	8b 15 ae 08 20 00    	mov    0x2008ae(%rip),%edx        # 60105c <fan_state>
+  4007ae:	8b 05 9c 08 20 00    	mov    0x20089c(%rip),%eax        # 601050 <furnace_state>
+  4007b4:	89 d6                	mov    %edx,%esi
+  4007b6:	89 c7                	mov    %eax,%edi
+  4007b8:	e8 55 ff ff ff       	callq  400712 <setFurnaceFanStates>
+  4007bd:	e9 ae 00 00 00       	jmpq   400870 <currentTempChanged+0x10a>
+  4007c2:	83 7d fc 48          	cmpl   $0x48,-0x4(%rbp)
+  4007c6:	7e 48                	jle    400810 <currentTempChanged+0xaa>
+  4007c8:	8b 0d 92 08 20 00    	mov    0x200892(%rip),%ecx        # 601060 <run_time>
+  4007ce:	b8 ce 09 40 00       	mov    $0x4009ce,%eax
+  4007d3:	8b 55 fc             	mov    -0x4(%rbp),%edx
+  4007d6:	89 ce                	mov    %ecx,%esi
+  4007d8:	48 89 c7             	mov    %rax,%rdi
+  4007db:	b8 00 00 00 00       	mov    $0x0,%eax
+  4007e0:	e8 8b fc ff ff       	callq  400470 <printf@plt>
+  4007e5:	c7 05 6d 08 20 00 01 	movl   $0x1,0x20086d(%rip)        # 60105c <fan_state>
+  4007ec:	00 00 00 
+  4007ef:	c7 05 57 08 20 00 00 	movl   $0x0,0x200857(%rip)        # 601050 <furnace_state>
+  4007f6:	00 00 00 
+  4007f9:	8b 15 5d 08 20 00    	mov    0x20085d(%rip),%edx        # 60105c <fan_state>
+  4007ff:	8b 05 4b 08 20 00    	mov    0x20084b(%rip),%eax        # 601050 <furnace_state>
+  400805:	89 d6                	mov    %edx,%esi
+  400807:	89 c7                	mov    %eax,%edi
+  400809:	e8 04 ff ff ff       	callq  400712 <setFurnaceFanStates>
+  40080e:	eb 60                	jmp    400870 <currentTempChanged+0x10a>
+  400810:	83 7d fc 46          	cmpl   $0x46,-0x4(%rbp)
+  400814:	75 33                	jne    400849 <currentTempChanged+0xe3>
+  400816:	8b 0d 44 08 20 00    	mov    0x200844(%rip),%ecx        # 601060 <run_time>
+  40081c:	b8 ce 09 40 00       	mov    $0x4009ce,%eax
+  400821:	8b 55 fc             	mov    -0x4(%rbp),%edx
+  400824:	89 ce                	mov    %ecx,%esi
+  400826:	48 89 c7             	mov    %rax,%rdi
+  400829:	b8 00 00 00 00       	mov    $0x0,%eax
+  40082e:	e8 3d fc ff ff       	callq  400470 <printf@plt>
+  400833:	bf e8 09 40 00       	mov    $0x4009e8,%edi
+  400838:	e8 23 fc ff ff       	callq  400460 <puts@plt>
+  40083d:	b8 00 00 00 00       	mov    $0x0,%eax
+  400842:	e8 58 fd ff ff       	callq  40059f <sendNewTemp>
+  400847:	eb 27                	jmp    400870 <currentTempChanged+0x10a>
+  400849:	8b 0d 11 08 20 00    	mov    0x200811(%rip),%ecx        # 601060 <run_time>
+  40084f:	b8 ce 09 40 00       	mov    $0x4009ce,%eax
+  400854:	8b 55 fc             	mov    -0x4(%rbp),%edx
+  400857:	89 ce                	mov    %ecx,%esi
+  400859:	48 89 c7             	mov    %rax,%rdi
+  40085c:	b8 00 00 00 00       	mov    $0x0,%eax
+  400861:	e8 0a fc ff ff       	callq  400470 <printf@plt>
+  400866:	b8 00 00 00 00       	mov    $0x0,%eax
+  40086b:	e8 2f fd ff ff       	callq  40059f <sendNewTemp>
+  400870:	c9                   	leaveq 
+  400871:	c3                   	retq   
+
+0000000000400872 <main>:
+  400872:	55                   	push   %rbp
+  400873:	48 89 e5             	mov    %rsp,%rbp
+  400876:	48 83 ec 10          	sub    $0x10,%rsp
+  40087a:	c7 45 f8 00 00 00 00 	movl   $0x0,-0x8(%rbp)
+  400881:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%rbp)
+  400888:	c7 05 b2 07 20 00 00 	movl   $0x0,0x2007b2(%rip)        # 601044 <furnace_time>
+  40088f:	00 00 00 
+  400892:	c7 05 ac 07 20 00 00 	movl   $0x0,0x2007ac(%rip)        # 601048 <fan_time>
+  400899:	00 00 00 
+  40089c:	c7 05 ba 07 20 00 00 	movl   $0x0,0x2007ba(%rip)        # 601060 <run_time>
+  4008a3:	00 00 00 
+  4008a6:	bf 41 00 00 00       	mov    $0x41,%edi
+  4008ab:	e8 d4 fc ff ff       	callq  400584 <setStartTemp>
+  4008b0:	8b 55 fc             	mov    -0x4(%rbp),%edx
+  4008b3:	8b 45 f8             	mov    -0x8(%rbp),%eax
+  4008b6:	89 d6                	mov    %edx,%esi
+  4008b8:	89 c7                	mov    %eax,%edi
+  4008ba:	e8 53 fe ff ff       	callq  400712 <setFurnaceFanStates>
+  4008bf:	c9                   	leaveq 
+  4008c0:	c3                   	retq   
+  4008c1:	90                   	nop
+  4008c2:	90                   	nop
+  4008c3:	90                   	nop
+  4008c4:	90                   	nop
+  4008c5:	90                   	nop
+  4008c6:	90                   	nop
+  4008c7:	90                   	nop
+  4008c8:	90                   	nop
+  4008c9:	90                   	nop
+  4008ca:	90                   	nop
+  4008cb:	90                   	nop
+  4008cc:	90                   	nop
+  4008cd:	90                   	nop
+  4008ce:	90                   	nop
+  4008cf:	90                   	nop
+
+00000000004008d0 <__libc_csu_init>:
+  4008d0:	48 89 6c 24 d8       	mov    %rbp,-0x28(%rsp)
+  4008d5:	4c 89 64 24 e0       	mov    %r12,-0x20(%rsp)
+  4008da:	48 8d 2d 43 05 20 00 	lea    0x200543(%rip),%rbp        # 600e24 <__init_array_end>
+  4008e1:	4c 8d 25 3c 05 20 00 	lea    0x20053c(%rip),%r12        # 600e24 <__init_array_end>
+  4008e8:	4c 89 6c 24 e8       	mov    %r13,-0x18(%rsp)
+  4008ed:	4c 89 74 24 f0       	mov    %r14,-0x10(%rsp)
+  4008f2:	4c 89 7c 24 f8       	mov    %r15,-0x8(%rsp)
+  4008f7:	48 89 5c 24 d0       	mov    %rbx,-0x30(%rsp)
+  4008fc:	48 83 ec 38          	sub    $0x38,%rsp
+  400900:	4c 29 e5             	sub    %r12,%rbp
+  400903:	41 89 fd             	mov    %edi,%r13d
+  400906:	49 89 f6             	mov    %rsi,%r14
+  400909:	48 c1 fd 03          	sar    $0x3,%rbp
+  40090d:	49 89 d7             	mov    %rdx,%r15
+  400910:	e8 23 fb ff ff       	callq  400438 <_init>
+  400915:	48 85 ed             	test   %rbp,%rbp
+  400918:	74 1c                	je     400936 <__libc_csu_init+0x66>
+  40091a:	31 db                	xor    %ebx,%ebx
+  40091c:	0f 1f 40 00          	nopl   0x0(%rax)
+  400920:	4c 89 fa             	mov    %r15,%rdx
+  400923:	4c 89 f6             	mov    %r14,%rsi
+  400926:	44 89 ef             	mov    %r13d,%edi
+  400929:	41 ff 14 dc          	callq  *(%r12,%rbx,8)
+  40092d:	48 83 c3 01          	add    $0x1,%rbx
+  400931:	48 39 eb             	cmp    %rbp,%rbx
+  400934:	75 ea                	jne    400920 <__libc_csu_init+0x50>
+  400936:	48 8b 5c 24 08       	mov    0x8(%rsp),%rbx
+  40093b:	48 8b 6c 24 10       	mov    0x10(%rsp),%rbp
+  400940:	4c 8b 64 24 18       	mov    0x18(%rsp),%r12
+  400945:	4c 8b 6c 24 20       	mov    0x20(%rsp),%r13
+  40094a:	4c 8b 74 24 28       	mov    0x28(%rsp),%r14
+  40094f:	4c 8b 7c 24 30       	mov    0x30(%rsp),%r15
+  400954:	48 83 c4 38          	add    $0x38,%rsp
+  400958:	c3                   	retq   
+  400959:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000400960 <__libc_csu_fini>:
+  400960:	f3 c3                	repz retq 
+  400962:	90                   	nop
+  400963:	90                   	nop
+  400964:	90                   	nop
+  400965:	90                   	nop
+  400966:	90                   	nop
+  400967:	90                   	nop
+  400968:	90                   	nop
+  400969:	90                   	nop
+  40096a:	90                   	nop
+  40096b:	90                   	nop
+  40096c:	90                   	nop
+  40096d:	90                   	nop
+  40096e:	90                   	nop
+  40096f:	90                   	nop
+
+0000000000400970 <__do_global_ctors_aux>:
+  400970:	55                   	push   %rbp
+  400971:	48 89 e5             	mov    %rsp,%rbp
+  400974:	53                   	push   %rbx
+  400975:	48 83 ec 08          	sub    $0x8,%rsp
+  400979:	48 8b 05 a8 04 20 00 	mov    0x2004a8(%rip),%rax        # 600e28 <__CTOR_LIST__>
+  400980:	48 83 f8 ff          	cmp    $0xffffffffffffffff,%rax
+  400984:	74 19                	je     40099f <__do_global_ctors_aux+0x2f>
+  400986:	bb 28 0e 60 00       	mov    $0x600e28,%ebx
+  40098b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+  400990:	48 83 eb 08          	sub    $0x8,%rbx
+  400994:	ff d0                	callq  *%rax
+  400996:	48 8b 03             	mov    (%rbx),%rax
+  400999:	48 83 f8 ff          	cmp    $0xffffffffffffffff,%rax
+  40099d:	75 f1                	jne    400990 <__do_global_ctors_aux+0x20>
+  40099f:	48 83 c4 08          	add    $0x8,%rsp
+  4009a3:	5b                   	pop    %rbx
+  4009a4:	5d                   	pop    %rbp
+  4009a5:	c3                   	retq   
+  4009a6:	90                   	nop
+  4009a7:	90                   	nop
+
+Disassembly of section .fini:
+
+00000000004009a8 <_fini>:
+  4009a8:	48 83 ec 08          	sub    $0x8,%rsp
+  4009ac:	e8 3f fb ff ff       	callq  4004f0 <__do_global_dtors_aux>
+  4009b1:	48 83 c4 08          	add    $0x8,%rsp
+  4009b5:	c3                   	retq   
